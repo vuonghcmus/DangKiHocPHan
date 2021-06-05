@@ -37,30 +37,7 @@ public class main {
 
     public static void main(String[] args) {
 
-//        if (ClassDAO.xoaClass("19CTT4") == true){
-//            System.out.println("Xoa thanh cong");
-//        }else{
-//            System.out.println("Xoa that bai!");
-//        }
-//        student sv = StudentDAO.layThongTinSinhVien("19120728");
-//        Class a = new Class();
-//        a.setMaLop("19CTT4");
-//        Class b = new Class();
-//        b.setMaLop("19CTT2");
-//        Class c = new Class();
-//        c.setMaLop("19CTT3");
-//        Class d = new Class();
-//        d.setMaLop("19CTT1");
-//        Class e = new Class();
-//        e.setMaLop("19CM1");
-//        Class f = new Class();
-//        f.setMaLop("19CTT5");
-//        Class g = new Class();
-//        g.setMaLop("20CTT4");
-//        Class h = new Class();
-//        h.setMaLop("19HO1");
-//        Class k = new Class();
-//        k.setMaLop("19SH1");
+//        
 //
 //        sv.getClass_student().add(a);
 //        sv.getClass_student().add(d);
