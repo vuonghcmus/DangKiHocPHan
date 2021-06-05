@@ -37,12 +37,6 @@ public class main {
 
     public static void main(String[] args) {
 
-//        
-//
-//        sv.getClass_student().add(a);
-//        sv.getClass_student().add(d);
-//
-//        StudentDAO.capNhatThongTinStudent(sv);
 //
 //        student sv1 = StudentDAO.layThongTinSinhVien("19120725");
 //        sv1.getClass_student().add(b);
