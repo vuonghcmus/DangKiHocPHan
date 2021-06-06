@@ -37,11 +37,7 @@ public class main {
 
     public static void main(String[] args) {
 
-//        if (ClassDAO.xoaClass("19CTT4") == true){
-//            System.out.println("Xoa thanh cong");
-//        }else{
-//            System.out.println("Xoa that bai!");
-//        }
+
 //        student sv = StudentDAO.layThongTinSinhVien("19120728");
 //        Class a = new Class();
 //        a.setMaLop("19CTT4");
