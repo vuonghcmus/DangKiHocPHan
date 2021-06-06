@@ -58,6 +58,8 @@ public class main {
 //        Class k = new Class();
 //        k.setMaLop("19SH1");
 //
+
+
 //        sv.getClass_student().add(a);
 //        sv.getClass_student().add(d);
 //
