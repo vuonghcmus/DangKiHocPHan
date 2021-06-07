@@ -38,6 +38,9 @@ public class main {
     public static void main(String[] args) {
 
 
+
+
+
 //        student sv = StudentDAO.layThongTinSinhVien("19120728");
 //        Class a = new Class();
 //        a.setMaLop("19CTT4");
