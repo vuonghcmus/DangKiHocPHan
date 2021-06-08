@@ -13,7 +13,7 @@
         <mapping class = "pojo.teacher"/>
         <mapping class = "pojo.subject"/>
         <mapping class = "pojo.semester"/>
-        <mapping class = "pojo.Class"/>
+        <mapping class = "pojo.ClassPojo"/>
         <mapping class = "pojo.student"/>
         <mapping class = "pojo.dangKiHocPhan"/>
         <mapping class = "pojo.course"/>

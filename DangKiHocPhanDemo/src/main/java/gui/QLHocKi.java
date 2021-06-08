@@ -101,11 +101,15 @@ public class QLHocKi extends javax.swing.JFrame {
         lable = new javax.swing.JLabel();
         tab5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jpLogout = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jp4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTab4 = new javax.swing.JTable();
         btnTab4 = new javax.swing.JButton();
+        lableExitTab4 = new javax.swing.JLabel();
         jp3 = new javax.swing.JPanel();
         lableTab3 = new javax.swing.JLabel();
         lableNameTab3 = new javax.swing.JLabel();
@@ -113,6 +117,7 @@ public class QLHocKi extends javax.swing.JFrame {
         btnXoaTab3 = new javax.swing.JButton();
         cbYearTab3 = new javax.swing.JComboBox<>();
         cbNameTab3 = new javax.swing.JComboBox<>();
+        lableExitTab3 = new javax.swing.JLabel();
         jp2 = new javax.swing.JPanel();
         lableTab2 = new javax.swing.JLabel();
         lableNameTab2 = new javax.swing.JLabel();
@@ -134,24 +139,27 @@ public class QLHocKi extends javax.swing.JFrame {
         cb1Tab2 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         cb4Tab2 = new javax.swing.JComboBox<>();
+        lableExitTab2 = new javax.swing.JLabel();
         jp1 = new javax.swing.JPanel();
         lableTab1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTab1 = new javax.swing.JTable();
+        lableExitTab1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản lý học kì");
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(159, 226, 191));
 
-        tab1.setBackground(new java.awt.Color(153, 255, 153));
+        tab1.setBackground(new java.awt.Color(253, 254, 254));
         tab1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab1MouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Xem danh sách");
 
@@ -169,14 +177,14 @@ public class QLHocKi extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab2.setBackground(new java.awt.Color(153, 255, 153));
+        tab2.setBackground(new java.awt.Color(253, 254, 254));
         tab2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab2MouseClicked(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Thêm học kỳ");
 
@@ -194,14 +202,14 @@ public class QLHocKi extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab3.setBackground(new java.awt.Color(153, 255, 153));
+        tab3.setBackground(new java.awt.Color(253, 254, 254));
         tab3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab3MouseClicked(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Xóa học kỳ");
 
@@ -219,14 +227,14 @@ public class QLHocKi extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab4.setBackground(new java.awt.Color(153, 255, 153));
+        tab4.setBackground(new java.awt.Color(253, 254, 254));
         tab4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab4MouseClicked(evt);
             }
         });
 
-        lable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lable.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lable.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lable.setText("Set học kỳ hiện tại");
 
@@ -237,21 +245,21 @@ public class QLHocKi extends javax.swing.JFrame {
             .addGroup(tab4Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab4Layout.setVerticalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lable, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab5.setBackground(new java.awt.Color(153, 255, 153));
+        tab5.setBackground(new java.awt.Color(253, 254, 254));
         tab5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab5MouseClicked(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Quay lại");
 
@@ -269,6 +277,21 @@ public class QLHocKi extends javax.swing.JFrame {
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_teacher_50px.png"))); // NOI18N
+
+        jpLogout.setBackground(new java.awt.Color(255, 102, 102));
+        jpLogout.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jpLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_shutdown_25px_1.png"))); // NOI18N
+        jpLogout.setText("Đăng xuất");
+        jpLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpLogoutMouseClicked(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -278,11 +301,24 @@ public class QLHocKi extends javax.swing.JFrame {
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel12))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jpLogout))))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel12)
+                .addGap(49, 49, 49)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,12 +328,16 @@ public class QLHocKi extends javax.swing.JFrame {
                 .addComponent(tab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jpLogout)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp4.setBackground(new java.awt.Color(255, 204, 255));
+        jp4.setBackground(new java.awt.Color(242, 243, 244));
 
-        tableTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tableTab4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableTab4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -326,11 +366,20 @@ public class QLHocKi extends javax.swing.JFrame {
             tableTab4.getColumnModel().getColumn(0).setMaxWidth(80);
         }
 
-        btnTab4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnTab4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_save_25px_1.png"))); // NOI18N
         btnTab4.setText("Set");
         btnTab4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTab4ActionPerformed(evt);
+            }
+        });
+
+        lableExitTab4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab4MouseClicked(evt);
             }
         });
 
@@ -347,32 +396,37 @@ public class QLHocKi extends javax.swing.JFrame {
                         .addGap(82, 82, 82)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 644, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(76, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lableExitTab4))
         );
         jp4Layout.setVerticalGroup(
             jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp4Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addComponent(lableExitTab4)
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(btnTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jp3.setBackground(new java.awt.Color(204, 255, 204));
+        jp3.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab3.setText("Xóa học kỳ");
 
-        lableNameTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNameTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNameTab3.setText("Chọn năm học");
 
-        lableYearTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableYearTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableYearTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableYearTab3.setText("Chọn tên học kì");
 
-        btnXoaTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnXoaTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnXoaTab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_delete_25px.png"))); // NOI18N
         btnXoaTab3.setText("Xóa");
         btnXoaTab3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -380,14 +434,22 @@ public class QLHocKi extends javax.swing.JFrame {
             }
         });
 
-        cbYearTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbYearTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbYearTab3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbYearTab3ActionPerformed(evt);
             }
         });
 
-        cbNameTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbNameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        lableExitTab3.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp3Layout = new javax.swing.GroupLayout(jp3);
         jp3.setLayout(jp3Layout);
@@ -411,11 +473,15 @@ public class QLHocKi extends javax.swing.JFrame {
                         .addGap(331, 331, 331)
                         .addComponent(btnXoaTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(283, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lableExitTab3))
         );
         jp3Layout.setVerticalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addComponent(lableExitTab3)
+                .addGap(40, 40, 40)
                 .addComponent(lableTab3)
                 .addGap(68, 68, 68)
                 .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -427,28 +493,29 @@ public class QLHocKi extends javax.swing.JFrame {
                     .addComponent(cbNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(86, 86, 86)
                 .addComponent(btnXoaTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        jp2.setBackground(new java.awt.Color(255, 204, 255));
+        jp2.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab2.setText("Thêm học kỳ");
 
-        lableNameTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNameTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNameTab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNameTab2.setText("Chọn học kỳ");
 
-        lableNgaybdTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNgaybdTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNgaybdTab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNgaybdTab2.setText("Chọn ngày bắt đầu");
 
-        lableNgayktTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNgayktTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNgayktTab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNgayktTab2.setText("Chọn ngày kết thúc");
 
-        btnThemTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnThemTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnThemTab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_25px.png"))); // NOI18N
         btnThemTab2.setText("Thêm");
         btnThemTab2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -456,13 +523,13 @@ public class QLHocKi extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Tháng");
 
-        cb3Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb3Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        cb2Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb2Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb2Tab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         cb2Tab2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -470,11 +537,11 @@ public class QLHocKi extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Ngày");
 
-        cb5Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb5Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb5Tab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         cb5Tab2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -482,39 +549,47 @@ public class QLHocKi extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setText("Ngày");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("Tháng");
 
-        cb6Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb6Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        cbHocKiTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbHocKiTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbHocKiTab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HK1", "HK2", "HK3" }));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel11.setText("Chọn năm học");
 
-        cbYearTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbYearTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbYearTab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Năm");
 
-        cb1Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb1Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb1Tab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026" }));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Năm");
 
-        cb4Tab2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb4Tab2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb4Tab2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026" }));
+
+        lableExitTab2.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
         jp2.setLayout(jp2Layout);
@@ -536,7 +611,7 @@ public class QLHocKi extends javax.swing.JFrame {
                             .addComponent(lableNgayktTab2)
                             .addComponent(lableNgaybdTab2)))
                     .addGroup(jp2Layout.createSequentialGroup()
-                        .addContainerGap(166, Short.MAX_VALUE)
+                        .addContainerGap(164, Short.MAX_VALUE)
                         .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jp2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
@@ -546,11 +621,9 @@ public class QLHocKi extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addGap(18, 18, 18)
                                 .addComponent(cb1Tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(53, 53, 53)
                         .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnThemTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jp2Layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
+                                .addGap(74, 74, 74)
                                 .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel8))
@@ -568,25 +641,29 @@ public class QLHocKi extends javax.swing.JFrame {
                                         .addGap(77, 77, 77)
                                         .addComponent(jLabel7)
                                         .addGap(18, 18, 18)
-                                        .addComponent(cb3Tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(cb3Tab2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jp2Layout.createSequentialGroup()
+                                .addGap(53, 53, 53)
+                                .addComponent(btnThemTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jp2Layout.createSequentialGroup()
                         .addGap(284, 284, 284)
                         .addComponent(lableTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(112, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lableExitTab2))
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addComponent(lableExitTab2)
+                .addGap(12, 12, 12)
                 .addComponent(lableTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cbHocKiTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lableNameTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp2Layout.createSequentialGroup()
-                        .addGap(303, 303, 303)
-                        .addComponent(btnThemTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp2Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -611,17 +688,20 @@ public class QLHocKi extends javax.swing.JFrame {
                             .addComponent(jLabel9)
                             .addComponent(cb6Tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cb4Tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                            .addComponent(jLabel10)))
+                    .addGroup(jp2Layout.createSequentialGroup()
+                        .addGap(303, 303, 303)
+                        .addComponent(btnThemTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        jp1.setBackground(new java.awt.Color(204, 204, 255));
+        jp1.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab1.setText("Danh sách học kỳ");
 
-        tableTab1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tableTab1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableTab1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -647,24 +727,36 @@ public class QLHocKi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableTab1);
 
+        lableExitTab1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp1Layout = new javax.swing.GroupLayout(jp1);
         jp1.setLayout(jp1Layout);
         jp1Layout.setHorizontalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
             .addGroup(jp1Layout.createSequentialGroup()
                 .addGap(233, 233, 233)
                 .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lableExitTab1))
         );
         jp1Layout.setVerticalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lableExitTab1))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(96, Short.MAX_VALUE))
@@ -719,10 +811,10 @@ public class QLHocKi extends javax.swing.JFrame {
 
         tab1.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(153, 255, 153));
-        tab3.setBackground(new Color(153, 255, 153));
-        tab4.setBackground(new Color(153, 255, 153));
-        tab5.setBackground(new Color(153, 255, 153));
+        tab2.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab5.setBackground(new Color(253, 254, 254));
 
         showTableTab1();
     }//GEN-LAST:event_tab1MouseClicked
@@ -735,10 +827,10 @@ public class QLHocKi extends javax.swing.JFrame {
 
         tab2.setBackground(new Color(204, 204, 255));
 
-        tab1.setBackground(new Color(153, 255, 153));
-        tab3.setBackground(new Color(153, 255, 153));
-        tab4.setBackground(new Color(153, 255, 153));
-        tab5.setBackground(new Color(153, 255, 153));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab5.setBackground(new Color(253, 254, 254));
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
@@ -749,12 +841,14 @@ public class QLHocKi extends javax.swing.JFrame {
 
         tab3.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(153, 255, 153));
-        tab1.setBackground(new Color(153, 255, 153));
-        tab4.setBackground(new Color(153, 255, 153));
-        showComboboxYearTab3();
+        tab2.setBackground(new Color(253, 254, 254));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        showComboboxYearTab3();/*
         tab5.setBackground(new Color(153, 255, 153));    }//GEN-LAST:event_tab3MouseClicked
-
+*/
+        tab5.setBackground(new Color(253, 254, 254));
+    }
     private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
         jp1.setVisible(false);
         jp2.setVisible(false);
@@ -763,10 +857,10 @@ public class QLHocKi extends javax.swing.JFrame {
 
         tab4.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(153, 255, 153));
-        tab3.setBackground(new Color(153, 255, 153));
-        tab1.setBackground(new Color(153, 255, 153));
-        tab5.setBackground(new Color(153, 255, 153));
+        tab2.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab5.setBackground(new Color(253, 254, 254));
 
         showTableTab4();
     }//GEN-LAST:event_tab4MouseClicked
@@ -951,6 +1045,27 @@ public class QLHocKi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cbYearTab3ActionPerformed
 
+    private void lableExitTab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab1MouseClicked
+
+    private void lableExitTab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab2MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab2MouseClicked
+
+    private void lableExitTab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab3MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab3MouseClicked
+
+    private void lableExitTab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab4MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab4MouseClicked
+
+    private void jpLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpLogoutMouseClicked
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jpLogoutMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1010,6 +1125,7 @@ public class QLHocKi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1022,11 +1138,17 @@ public class QLHocKi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JPanel jp3;
     private javax.swing.JPanel jp4;
+    private javax.swing.JLabel jpLogout;
     private javax.swing.JLabel lable;
+    private javax.swing.JLabel lableExitTab1;
+    private javax.swing.JLabel lableExitTab2;
+    private javax.swing.JLabel lableExitTab3;
+    private javax.swing.JLabel lableExitTab4;
     private javax.swing.JLabel lableNameTab2;
     private javax.swing.JLabel lableNameTab3;
     private javax.swing.JLabel lableNgaybdTab2;

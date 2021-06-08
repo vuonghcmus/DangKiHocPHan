@@ -40,8 +40,10 @@ public class changePass extends javax.swing.JFrame {
         jpOldPass = new javax.swing.JPasswordField();
         jpNewPass = new javax.swing.JPasswordField();
         jpNewPass_1 = new javax.swing.JPasswordField();
+        lableExit = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 51, 102));
+        setBackground(new java.awt.Color(229, 231, 233));
+        setUndecorated(true);
 
         lable1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lable1.setForeground(new java.awt.Color(255, 0, 102));
@@ -77,6 +79,14 @@ public class changePass extends javax.swing.JFrame {
         jpNewPass_1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jpNewPass_1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
+        lableExit.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,18 +104,22 @@ public class changePass extends javax.swing.JFrame {
                     .addComponent(jpOldPass))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 237, Short.MAX_VALUE)
-                .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(236, 236, 236))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(278, 278, 278))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 237, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(236, 236, 236))
+                    .addComponent(lableExit, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addComponent(lableExit)
+                .addGap(19, 19, 19)
                 .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -149,6 +163,11 @@ public class changePass extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnChangeActionPerformed
 
+    private void lableExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitMouseClicked
+        new updateInfor().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lableExitMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -190,6 +209,7 @@ public class changePass extends javax.swing.JFrame {
     private javax.swing.JPasswordField jpNewPass_1;
     private javax.swing.JPasswordField jpOldPass;
     private javax.swing.JLabel lable1;
+    private javax.swing.JLabel lableExit;
     private javax.swing.JLabel lableNewPass;
     private javax.swing.JLabel lableNewPass_1;
     private javax.swing.JLabel lableOldPass;

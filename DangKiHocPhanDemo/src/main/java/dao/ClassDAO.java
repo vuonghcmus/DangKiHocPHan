@@ -10,7 +10,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import pojo.Class;
+import pojo.ClassPojo;
 import util.HibernateUtil;
 
 /**
@@ -19,8 +19,8 @@ import util.HibernateUtil;
  */
 public class ClassDAO {
 
-    public static List<Class> layDanhSachClass() {
-        List<Class> ds = null;
+    public static List<ClassPojo> layDanhSachClass() {
+        List<ClassPojo> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             String hql = "select u from class u";
@@ -35,7 +35,7 @@ public class ClassDAO {
         return ds;
     }
 
-    public static boolean addClass(Class u) {
+    public static boolean addClass(ClassPojo u) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         if (ClassDAO.layThongTinClass(u.getMaLop()) != null) {
             return false;
@@ -56,8 +56,8 @@ public class ClassDAO {
         return kq;
     }
 
-    public static Class layThongTinClass(String maLop) {
-        Class sv = null;
+    public static ClassPojo layThongTinClass(String maLop) {
+        ClassPojo sv = null;
         Session session = HibernateUtil.getSessionFactory()
                 .openSession();
         try {
@@ -66,7 +66,7 @@ public class ClassDAO {
             hql += " where c.maLop=:maLop";
             Query query = session.createQuery(hql);
             query.setString("maLop", maLop);
-            sv = (Class) query.uniqueResult();
+            sv = (ClassPojo) query.uniqueResult();
         } catch (HibernateException ex) {
             System.err.println(ex);
         } finally {
@@ -75,7 +75,7 @@ public class ClassDAO {
         return sv;
     }
 
-    public static boolean capNhatThongTinClass(Class u) {
+    public static boolean capNhatThongTinClass(ClassPojo u) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         if (ClassDAO.layThongTinClass(u.getMaLop()) == null) {
             return false;
@@ -98,7 +98,7 @@ public class ClassDAO {
     public static boolean xoaClass(String maLop) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        Class u = ClassDAO.layThongTinClass(maLop);
+        ClassPojo u = ClassDAO.layThongTinClass(maLop);
         if (u == null) {
             return false;
         }

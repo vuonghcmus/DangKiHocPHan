@@ -5,12 +5,14 @@
  */
 package gui;
 
+import dao.StudentDAO;
 import dao.TeacherDAO;
 import dao.UserDAO;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import pojo.student;
 import pojo.teacher;
 import pojo.user;
 
@@ -36,7 +38,6 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jp2.setVisible(false);
         jp3.setVisible(false);
         jp4.setVisible(false);
-        jp5.setVisible(false);
         jp6.setVisible(false);
     }
 
@@ -72,23 +73,29 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tab4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        tab5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         tab6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         tab7 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jpLogout = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lableReset = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        lableReset1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jp1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTab1 = new javax.swing.JTable();
         lableTab1 = new javax.swing.JLabel();
+        lableExitTab1 = new javax.swing.JLabel();
         jp6 = new javax.swing.JPanel();
         lableTab6 = new javax.swing.JLabel();
         lableUsernameTab6 = new javax.swing.JLabel();
         btnDeleteTab6 = new javax.swing.JButton();
         cbTab6 = new javax.swing.JComboBox<>();
-        jp5 = new javax.swing.JPanel();
+        lableExitTab6 = new javax.swing.JLabel();
         jp4 = new javax.swing.JPanel();
         btnUpdateTab4 = new javax.swing.JButton();
         lablePhoneNumberTab4 = new javax.swing.JLabel();
@@ -100,7 +107,9 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         lableNameTab4 = new javax.swing.JLabel();
         tfAddressTab4 = new javax.swing.JTextField();
         lableEmailTab4 = new javax.swing.JLabel();
-        btnPassTab4 = new javax.swing.JButton();
+        lableExitTab4 = new javax.swing.JLabel();
+        lableUsernameTab7 = new javax.swing.JLabel();
+        cbTab4 = new javax.swing.JComboBox<>();
         jp3 = new javax.swing.JPanel();
         lableTab3 = new javax.swing.JLabel();
         tfPhoneNumberTab3 = new javax.swing.JTextField();
@@ -118,12 +127,16 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         lablePasswordTab3_1 = new javax.swing.JLabel();
         jpPassTab3 = new javax.swing.JPasswordField();
         jpPassTab3_1 = new javax.swing.JPasswordField();
+        lableExitTab3 = new javax.swing.JLabel();
+        cbTab3 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
         jp2 = new javax.swing.JPanel();
         lableTab2 = new javax.swing.JLabel();
         tfTab2 = new javax.swing.JTextField();
         btnFindTab2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTab2 = new javax.swing.JTable();
+        lableExitTab2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -151,17 +164,18 @@ public class QLTaiKhoan extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quản lý tài khoản");
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(159, 226, 191));
 
-        tab1.setBackground(new java.awt.Color(51, 255, 204));
+        tab1.setBackground(new java.awt.Color(253, 254, 254));
         tab1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab1MouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Xem danh sách");
 
@@ -179,14 +193,14 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab3.setBackground(new java.awt.Color(51, 255, 204));
+        tab3.setBackground(new java.awt.Color(253, 254, 254));
         tab3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab3MouseClicked(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Thêm tài khoản");
 
@@ -204,14 +218,14 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab2.setBackground(new java.awt.Color(51, 255, 204));
+        tab2.setBackground(new java.awt.Color(253, 254, 254));
         tab2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab2MouseClicked(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Tìm kiếm tài khoản");
 
@@ -229,14 +243,14 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab4.setBackground(new java.awt.Color(51, 255, 204));
+        tab4.setBackground(new java.awt.Color(253, 254, 254));
         tab4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab4MouseClicked(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Cập nhật thông tin");
 
@@ -245,7 +259,7 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         tab4Layout.setHorizontalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab4Layout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(56, 56, 56))
         );
@@ -254,39 +268,14 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab5.setBackground(new java.awt.Color(51, 255, 204));
-        tab5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tab5MouseClicked(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("Reset mật khẩu");
-
-        javax.swing.GroupLayout tab5Layout = new javax.swing.GroupLayout(tab5);
-        tab5.setLayout(tab5Layout);
-        tab5Layout.setHorizontalGroup(
-            tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tab5Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        tab5Layout.setVerticalGroup(
-            tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        tab6.setBackground(new java.awt.Color(51, 255, 204));
+        tab6.setBackground(new java.awt.Color(253, 254, 254));
         tab6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab6MouseClicked(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText("Xóa tài khoản");
 
@@ -304,14 +293,14 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        tab7.setBackground(new java.awt.Color(51, 255, 204));
+        tab7.setBackground(new java.awt.Color(253, 254, 254));
         tab7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab7MouseClicked(evt);
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Quay lại");
 
@@ -329,6 +318,48 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 5)); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_teacher_50px.png"))); // NOI18N
+
+        jpLogout.setBackground(new java.awt.Color(255, 102, 102));
+        jpLogout.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jpLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_shutdown_25px_1.png"))); // NOI18N
+        jpLogout.setText("Đăng xuất");
+        jpLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpLogoutMouseClicked(evt);
+            }
+        });
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        lableReset.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lableReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_password_25px.png"))); // NOI18N
+        lableReset.setText("Reset password giáo vụ");
+        lableReset.setToolTipText("Reset password của tất cả giáo vụ");
+        lableReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableResetMouseClicked(evt);
+            }
+        });
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+
+        lableReset1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        lableReset1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_password_25px.png"))); // NOI18N
+        lableReset1.setText("Reset password sinh viên");
+        lableReset1.setToolTipText("Reset password của tất cả giáo vụ");
+        lableReset1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableReset1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -337,14 +368,39 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tab5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(jLabel8))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lableReset)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jpLogout))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 13, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lableReset1)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel8)
+                .addGap(29, 29, 29)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,17 +409,27 @@ public class QLTaiKhoan extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(tab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(tab5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addComponent(tab6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lableReset)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(lableReset1)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpLogout)
+                .addGap(0, 0, 0)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        jp1.setBackground(new java.awt.Color(255, 204, 204));
+        jp1.setBackground(new java.awt.Color(242, 243, 244));
 
-        tableTab1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        tableTab1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         tableTab1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -379,40 +445,55 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         lableTab1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab1.setText("Danh sách tài khoản giáo vụ");
 
+        lableExitTab1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp1Layout = new javax.swing.GroupLayout(jp1);
         jp1.setLayout(jp1Layout);
         jp1Layout.setHorizontalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 692, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(203, 203, 203))
+                .addGap(205, 205, 205)
+                .addComponent(lableExitTab1))
+            .addGroup(jp1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 42, Short.MAX_VALUE))
         );
         jp1Layout.setVerticalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp1Layout.createSequentialGroup()
+                        .addComponent(lableExitTab1)
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
+                        .addComponent(lableTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp6.setBackground(new java.awt.Color(255, 204, 204));
+        jp6.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        lableTab6.setForeground(new java.awt.Color(255, 0, 0));
         lableTab6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab6.setText("Xóa tài khoản");
 
-        lableUsernameTab6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lableUsernameTab6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableUsernameTab6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableUsernameTab6.setText("Chọn username");
 
-        btnDeleteTab6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnDeleteTab6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDeleteTab6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_delete_25px.png"))); // NOI18N
         btnDeleteTab6.setText("Xóa");
         btnDeleteTab6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -420,58 +501,58 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        cbTab6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cbTab6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        lableExitTab6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp6Layout = new javax.swing.GroupLayout(jp6);
         jp6.setLayout(jp6Layout);
         jp6Layout.setHorizontalGroup(
             jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp6Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lableExitTab6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp6Layout.createSequentialGroup()
+                        .addComponent(lableTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(316, 316, 316))))
             .addGroup(jp6Layout.createSequentialGroup()
                 .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp6Layout.createSequentialGroup()
                         .addGap(110, 110, 110)
                         .addComponent(lableUsernameTab6)
-                        .addGap(62, 62, 62)
-                        .addComponent(cbTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(41, 41, 41)
+                        .addComponent(cbTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp6Layout.createSequentialGroup()
                         .addGap(328, 328, 328)
-                        .addComponent(btnDeleteTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(231, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lableTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(287, 287, 287))
+                        .addComponent(btnDeleteTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
         jp6Layout.setVerticalGroup(
             jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp6Layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addComponent(lableExitTab6)
+                .addGap(22, 22, 22)
                 .addComponent(lableTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(52, 52, 52)
                 .addGroup(jp6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lableUsernameTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(89, 89, 89)
                 .addComponent(btnDeleteTab6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(231, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
 
-        jp5.setBackground(new java.awt.Color(204, 255, 204));
+        jp4.setBackground(new java.awt.Color(242, 243, 244));
 
-        javax.swing.GroupLayout jp5Layout = new javax.swing.GroupLayout(jp5);
-        jp5.setLayout(jp5Layout);
-        jp5Layout.setHorizontalGroup(
-            jp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
-        );
-        jp5Layout.setVerticalGroup(
-            jp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
-        );
-
-        jp4.setBackground(new java.awt.Color(204, 204, 255));
-
-        btnUpdateTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnUpdateTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUpdateTab4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_update_user_25px_2.png"))); // NOI18N
         btnUpdateTab4.setText("Update");
         btnUpdateTab4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -479,138 +560,158 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        lablePhoneNumberTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lablePhoneNumberTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lablePhoneNumberTab4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lablePhoneNumberTab4.setText("Số điện thoại");
+        lablePhoneNumberTab4.setText("Số điện thoại mới");
 
-        lableAddressTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lableAddressTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableAddressTab4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lableAddressTab4.setText("Địa chỉ");
+        lableAddressTab4.setText("Địa chỉ mới");
 
-        tfNameTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfNameTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfNameTab4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        tfEmailTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfEmailTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfEmailTab4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        tfPhoneNumberTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfPhoneNumberTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfPhoneNumberTab4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lableTab4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab4.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab4.setText("CẬP NHẬT THÔNG TIN");
 
-        lableNameTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lableNameTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNameTab4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lableNameTab4.setText("Họ và tên");
+        lableNameTab4.setText("Họ và tên mới");
 
-        tfAddressTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfAddressTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfAddressTab4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lableEmailTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lableEmailTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableEmailTab4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lableEmailTab4.setText("Email");
+        lableEmailTab4.setText("Email mới");
 
-        btnPassTab4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnPassTab4.setText("Đổi mật khẩu");
-        btnPassTab4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPassTab4ActionPerformed(evt);
+        lableExitTab4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab4MouseClicked(evt);
             }
         });
+
+        lableUsernameTab7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lableUsernameTab7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lableUsernameTab7.setText("Chọn username");
+
+        cbTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jp4Layout = new javax.swing.GroupLayout(jp4);
         jp4.setLayout(jp4Layout);
         jp4Layout.setHorizontalGroup(
             jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lableExitTab4))
             .addGroup(jp4Layout.createSequentialGroup()
                 .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp4Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jp4Layout.createSequentialGroup()
-                                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lableNameTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lableEmailTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lablePhoneNumberTab4)
-                                    .addComponent(lableAddressTab4))
-                                .addGap(49, 49, 49)
-                                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfPhoneNumberTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(tfEmailTab4)
-                                        .addComponent(tfNameTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jp4Layout.createSequentialGroup()
-                                .addGap(248, 248, 248)
-                                .addComponent(lableTab4))))
+                        .addGap(275, 275, 275)
+                        .addComponent(lableTab4))
                     .addGroup(jp4Layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(btnUpdateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104)
-                        .addComponent(btnPassTab4)))
-                .addContainerGap(149, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lableAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(lableEmailTab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lableNameTab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lableUsernameTab7, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(lablePhoneNumberTab4))
+                        .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp4Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tfNameTab4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfEmailTab4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jp4Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfPhoneNumberTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(162, Short.MAX_VALUE))
+            .addGroup(jp4Layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(btnUpdateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp4Layout.setVerticalGroup(
             jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp4Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addComponent(lableExitTab4)
+                .addGap(21, 21, 21)
                 .addComponent(lableTab4)
-                .addGap(39, 39, 39)
+                .addGap(31, 31, 31)
                 .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNameTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableNameTab4))
-                .addGap(18, 18, 18)
-                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEmailTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableEmailTab4))
-                .addGap(18, 18, 18)
-                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPhoneNumberTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lablePhoneNumberTab4))
-                .addGap(18, 18, 18)
-                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableAddressTab4))
-                .addGap(65, 65, 65)
-                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPassTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(130, Short.MAX_VALUE))
+                    .addComponent(cbTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lableUsernameTab7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp4Layout.createSequentialGroup()
+                        .addComponent(tfNameTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(tfEmailTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfPhoneNumberTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp4Layout.createSequentialGroup()
+                        .addComponent(lableNameTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lableEmailTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lablePhoneNumberTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lableAddressTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(58, 58, 58)
+                .addComponent(btnUpdateTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
 
-        jp3.setBackground(new java.awt.Color(255, 204, 204));
+        jp3.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lableTab3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab3.setText("THÊM TÀI KHOẢN");
 
-        tfPhoneNumberTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfPhoneNumberTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfPhoneNumberTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lableNameTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lableNameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNameTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNameTab3.setText("Họ và tên");
 
-        tfAddressTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfAddressTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfAddressTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lableEmailTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lableEmailTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableEmailTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableEmailTab3.setText("Email");
 
-        tfUsernameTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfUsernameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfUsernameTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lablePhoneNumberTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lablePhoneNumberTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lablePhoneNumberTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lablePhoneNumberTab3.setText("Số điện thoại");
 
-        lableAddressTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lableAddressTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableAddressTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableAddressTab3.setText("Địa chỉ");
 
-        btnThemTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnThemTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnThemTab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_add_25px.png"))); // NOI18N
         btnThemTab3.setText("Thêm");
         btnThemTab3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -618,115 +719,172 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             }
         });
 
-        lableUsernameTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lableUsernameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableUsernameTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableUsernameTab3.setText("Username");
 
-        lablePasswordTab3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lablePasswordTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lablePasswordTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lablePasswordTab3.setText("Password");
 
-        tfNameTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfNameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfNameTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        tfEmailTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tfEmailTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfEmailTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        lablePasswordTab3_1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lablePasswordTab3_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lablePasswordTab3_1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lablePasswordTab3_1.setText("Nhập lại password");
 
-        jpPassTab3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jpPassTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpPassTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        jpPassTab3_1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jpPassTab3_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpPassTab3_1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+
+        lableExitTab3.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab3MouseClicked(evt);
+            }
+        });
+
+        cbTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cbTab3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Giáo vụ", "Sinh viên" }));
+        cbTab3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTab3ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setText("Chọn tài khoản");
 
         javax.swing.GroupLayout jp3Layout = new javax.swing.GroupLayout(jp3);
         jp3.setLayout(jp3Layout);
         jp3Layout.setHorizontalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp3Layout.createSequentialGroup()
+                .addGap(324, 324, 324)
+                .addComponent(lableTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
+                .addComponent(lableExitTab3))
+            .addGroup(jp3Layout.createSequentialGroup()
+                .addGap(58, 58, 58)
                 .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp3Layout.createSequentialGroup()
-                        .addGap(330, 330, 330)
-                        .addComponent(btnThemTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lableEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
+                        .addComponent(tfEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp3Layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lablePhoneNumberTab3)
+                        .addGap(73, 73, 73)
+                        .addComponent(tfPhoneNumberTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addComponent(lableAddressTab3)
+                        .addGap(124, 124, 124)
+                        .addComponent(tfAddressTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addComponent(lableUsernameTab3)
+                        .addGap(98, 98, 98)
+                        .addComponent(tfUsernameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addComponent(lablePasswordTab3)
+                        .addGap(102, 102, 102)
+                        .addComponent(jpPassTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addComponent(lablePasswordTab3_1)
+                        .addGap(28, 28, 28)
+                        .addComponent(jpPassTab3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jp3Layout.createSequentialGroup()
-                                .addComponent(lableNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70)
-                                .addComponent(tfNameTab3))
-                            .addGroup(jp3Layout.createSequentialGroup()
-                                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lableEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lablePhoneNumberTab3)
-                                    .addComponent(lableAddressTab3)
-                                    .addComponent(lableUsernameTab3)
-                                    .addComponent(lablePasswordTab3)
-                                    .addComponent(lablePasswordTab3_1))
-                                .addGap(21, 21, 21)
-                                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jpPassTab3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jpPassTab3)
-                                        .addComponent(tfUsernameTab3)
-                                        .addComponent(tfAddressTab3)
-                                        .addComponent(tfPhoneNumberTab3)
-                                        .addComponent(tfEmailTab3)))))))
-                .addGap(112, 112, 112))
+                                .addComponent(lableNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(84, 84, 84))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp3Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(56, 56, 56)))
+                        .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp3Layout.createSequentialGroup()
-                .addComponent(lableTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(239, 239, 239))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnThemTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(336, 336, 336))
         );
         jp3Layout.setVerticalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lableTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableNameTab3))
-                .addGap(17, 17, 17)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableEmailTab3))
-                .addGap(16, 16, 16)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPhoneNumberTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lablePhoneNumberTab3))
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(lableTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lableExitTab3))
                 .addGap(18, 18, 18)
                 .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAddressTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableAddressTab3))
-                .addGap(17, 17, 17)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfUsernameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableUsernameTab3))
-                .addGap(17, 17, 17)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jpPassTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lablePasswordTab3))
+                    .addComponent(cbTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lableNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
-                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jpPassTab3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lablePasswordTab3_1))
-                .addGap(14, 14, 14)
-                .addComponent(btnThemTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lableEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfEmailTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lablePhoneNumberTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPhoneNumberTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lableAddressTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfAddressTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lableUsernameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfUsernameTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lablePasswordTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpPassTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp3Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lablePasswordTab3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jpPassTab3_1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnThemTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jp2.setBackground(new java.awt.Color(153, 153, 255));
+        jp2.setBackground(new java.awt.Color(242, 243, 244));
 
-        lableTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableTab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableTab2.setText("Nhập username");
 
-        tfTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tfTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfTab2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        btnFindTab2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnFindTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFindTab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_find_user_male_25px.png"))); // NOI18N
         btnFindTab2.setText("Tìm");
         btnFindTab2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -734,6 +892,7 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             }
         });
 
+        tableTab2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tableTab2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -744,37 +903,50 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tableTab2);
 
+        lableExitTab2.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExitTab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExitTab2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExitTab2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
         jp2.setLayout(jp2Layout);
         jp2Layout.setHorizontalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
+                .addGap(335, 335, 335)
+                .addComponent(btnFindTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jp2Layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp2Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jp2Layout.createSequentialGroup()
-                                .addComponent(lableTab2)
-                                .addGap(76, 76, 76)
-                                .addComponent(tfTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jp2Layout.createSequentialGroup()
-                        .addGap(335, 335, 335)
-                        .addComponent(btnFindTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(lableTab2)
+                        .addGap(76, 76, 76)
+                        .addComponent(tfTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                        .addComponent(lableExitTab2))))
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lableTab2))
+                .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp2Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lableTab2)))
+                    .addComponent(lableExitTab2))
                 .addGap(26, 26, 26)
                 .addComponent(btnFindTab2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -790,8 +962,6 @@ public class QLTaiKhoan extends javax.swing.JFrame {
                 .addComponent(jp4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jp6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jp5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -804,8 +974,6 @@ public class QLTaiKhoan extends javax.swing.JFrame {
                 .addComponent(jp4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jp6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jp5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -831,15 +999,13 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jp2.setVisible(false);
         jp3.setVisible(false);
         jp4.setVisible(false);
-        jp5.setVisible(false);
         jp6.setVisible(false);
         tab1.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(51, 255, 204));
-        tab3.setBackground(new Color(51, 255, 204));
-        tab4.setBackground(new Color(51, 255, 204));
-        tab5.setBackground(new Color(51, 255, 204));
-        tab6.setBackground(new Color(51, 255, 204));
+        tab2.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab6.setBackground(new Color(253, 254, 254));
 
         showTableTab1();
     }//GEN-LAST:event_tab1MouseClicked
@@ -849,15 +1015,13 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jp2.setVisible(true);
         jp3.setVisible(false);
         jp4.setVisible(false);
-        jp5.setVisible(false);
         jp6.setVisible(false);
         tab2.setBackground(new Color(204, 204, 255));
 
-        tab1.setBackground(new Color(51, 255, 204));
-        tab3.setBackground(new Color(51, 255, 204));
-        tab4.setBackground(new Color(51, 255, 204));
-        tab5.setBackground(new Color(51, 255, 204));
-        tab6.setBackground(new Color(51, 255, 204));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab6.setBackground(new Color(253, 254, 254));
 
     }//GEN-LAST:event_tab2MouseClicked
 
@@ -866,15 +1030,21 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jp2.setVisible(false);
         jp3.setVisible(true);
         jp4.setVisible(false);
-        jp5.setVisible(false);
         jp6.setVisible(false);
         tab3.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(51, 255, 204));
-        tab1.setBackground(new Color(51, 255, 204));
-        tab4.setBackground(new Color(51, 255, 204));
-        tab5.setBackground(new Color(51, 255, 204));
-        tab6.setBackground(new Color(51, 255, 204));
+        tab2.setBackground(new Color(253, 254, 254));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab6.setBackground(new Color(253, 254, 254));
+
+        tfNameTab3.setEnabled(false);
+        tfEmailTab3.setEnabled(false);
+        tfPhoneNumberTab3.setEnabled(false);
+        tfAddressTab3.setEnabled(false);
+        tfUsernameTab3.setEnabled(false);
+        jpPassTab3.setEnabled(false);
+        jpPassTab3_1.setEnabled(false);
     }//GEN-LAST:event_tab3MouseClicked
 
     private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
@@ -882,70 +1052,38 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         jp2.setVisible(false);
         jp3.setVisible(false);
         jp4.setVisible(true);
-        jp5.setVisible(false);
         tab4.setBackground(new Color(204, 204, 255));
         jp6.setVisible(false);
 
-        tab2.setBackground(new Color(51, 255, 204));
-        tab3.setBackground(new Color(51, 255, 204));
-        tab1.setBackground(new Color(51, 255, 204));
-        tab5.setBackground(new Color(51, 255, 204));
-        tab6.setBackground(new Color(51, 255, 204));
+        tab2.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab1.setBackground(new Color(253, 254, 254));
+        tab6.setBackground(new Color(253, 254, 254));
+        showComboboxTab4();
     }//GEN-LAST:event_tab4MouseClicked
-
-    private void tab5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab5MouseClicked
-        jp1.setVisible(false);
-        jp2.setVisible(false);
-        jp3.setVisible(false);
-        jp4.setVisible(false);
-        jp5.setVisible(true);
-        jp6.setVisible(false);
-        tab5.setBackground(new Color(204, 204, 255));
-
-        tab2.setBackground(new Color(51, 255, 204));
-        tab3.setBackground(new Color(51, 255, 204));
-        tab4.setBackground(new Color(51, 255, 204));
-        tab1.setBackground(new Color(51, 255, 204));
-        tab6.setBackground(new Color(51, 255, 204));
-
-        List<user> u = UserDAO.layDanhSachUser();
-
-        for (user x : u) {
-            if (x.getType() == 1) {
-                x.setPassword("123456");
-            }
-        }
-
-        for (user x : u) {
-            if (x.getType() == 1) {
-                if (UserDAO.capNhatThongTinUser(x) == false) {
-                    JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu thất bại!");
-                    return;
-                }
-            }
-        }
-        JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu thành công!");
-    }//GEN-LAST:event_tab5MouseClicked
 
     private void tab6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab6MouseClicked
         jp1.setVisible(false);
         jp2.setVisible(false);
         jp3.setVisible(false);
         jp4.setVisible(false);
-        jp5.setVisible(false);
         jp6.setVisible(true);
         tab6.setBackground(new Color(204, 204, 255));
 
-        tab2.setBackground(new Color(51, 255, 204));
-        tab3.setBackground(new Color(51, 255, 204));
-        tab4.setBackground(new Color(51, 255, 204));
-        tab5.setBackground(new Color(51, 255, 204));
-        tab1.setBackground(new Color(51, 255, 204));
-        
+        tab2.setBackground(new Color(253, 254, 254));
+        tab3.setBackground(new Color(253, 254, 254));
+        tab4.setBackground(new Color(253, 254, 254));
+        tab1.setBackground(new Color(253, 254, 254));
+
         showComboboxTab6();
     }//GEN-LAST:event_tab6MouseClicked
 
     private void btnFindTab2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindTab2ActionPerformed
+        if (tfTab2.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập username!");
+            return;
+        }
+
         List<teacher> listTeacher = TeacherDAO.layDanhSachTeacher();
         String username = tfTab2.getText();
         for (teacher t : listTeacher) {
@@ -968,24 +1106,62 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         String password = jpPassTab3.getText();
         String password_1 = jpPassTab3_1.getText();
 
-        if (name.equals("") || email.equals("") || address.equals("") || phoneNumber.equals("")
-                || username.equals("") || password.equals("") || password_1.equals("")) {
-            JOptionPane.showMessageDialog(rootPane, "Bạn phải điền đầy đủ thông tin!");
-            return;
-        }
+        if (cbTab3.getSelectedIndex() == 0) {
+            if (name.equals("") || email.equals("") || address.equals("") || phoneNumber.equals("")
+                    || username.equals("") || password.equals("") || password_1.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Bạn phải điền đầy đủ thông tin!");
+                return;
+            }
 
-        if (!password.equals(password_1)) {
-            JOptionPane.showMessageDialog(rootPane, "Mật khẩu không khớp!");
-        } else if (TeacherDAO.layThongTinTeacher(username) != null) {
-            JOptionPane.showMessageDialog(rootPane, "username đã tồn tại");
-        } else {
+            if (!password.equals(password_1)) {
+                JOptionPane.showMessageDialog(rootPane, "Mật khẩu không khớp!");
+                return;
+            }
+            if (UserDAO.layThongTinUser(username) != null) {
+                JOptionPane.showMessageDialog(rootPane, "username đã tồn tại");
+                return;
+            }
+
             teacher t = new teacher(username, name, email, address, phoneNumber);
             user u = new user(username, password, 1, null);
             if (TeacherDAO.addTeacher(t) == true && UserDAO.addUser(u) == true) {
                 JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thành công");
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thất bại");
+                tfNameTab3.setText("");
+                tfEmailTab3.setText("");
+                tfPhoneNumberTab3.setText("");
+                tfAddressTab3.setText("");
+                tfUsernameTab3.setText("");
+                jpPassTab3.setText("");
+                jpPassTab3_1.setText("");
+                return;
             }
+            JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thất bại");
+            return;
+        }
+
+        if (cbTab3.getSelectedIndex() == 1) {
+            if (name.equals("") || address.equals("") || username.equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Bạn phải điền đầy đủ thông tin!");
+                return;
+            }
+            if (UserDAO.layThongTinUser(username) != null) {
+                JOptionPane.showMessageDialog(rootPane, "username đã tồn tại");
+                return;
+            }
+            user u = new user(username, "123456", 0, null);
+            student st = new student(username, name, 1, null, address);
+            if (StudentDAO.themSinhVien(st) == true && UserDAO.addUser(u) == true) {
+                JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thành công");
+                tfNameTab3.setText("");
+                tfEmailTab3.setText("");
+                tfPhoneNumberTab3.setText("");
+                tfAddressTab3.setText("");
+                tfUsernameTab3.setText("");
+                jpPassTab3.setText("");
+                jpPassTab3_1.setText("");
+                return;
+            }
+            JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thất bại");
         }
     }//GEN-LAST:event_btnThemTab3ActionPerformed
 
@@ -999,7 +1175,7 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             return;
         }
 
-        teacher t = new teacher(login.staticUsername, name, email, address, phoneNumber);
+        teacher t = new teacher(cbTab4.getSelectedItem().toString(), name, email, address, phoneNumber);
 
         if (TeacherDAO.capNhatThongTinTeacher(t)) {
             javax.swing.JOptionPane.showMessageDialog(rootPane, "Cập nhật thông tin thành công!");
@@ -1007,10 +1183,6 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(rootPane, "Cập nhật thông tin thất bại!");
         }
     }//GEN-LAST:event_btnUpdateTab4ActionPerformed
-
-    private void btnPassTab4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassTab4ActionPerformed
-        new changePass().setVisible(true);
-    }//GEN-LAST:event_btnPassTab4ActionPerformed
 
     private void btnDeleteTab6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteTab6ActionPerformed
         String username = cbTab6.getSelectedItem().toString();
@@ -1026,6 +1198,109 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         new GiaoVuGUI().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_tab7MouseClicked
+
+    private void lableExitTab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab1MouseClicked
+
+    private void lableExitTab6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab6MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab6MouseClicked
+
+    private void lableExitTab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab2MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab2MouseClicked
+
+    private void lableExitTab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab3MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab3MouseClicked
+
+    private void lableExitTab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitTab4MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExitTab4MouseClicked
+
+    private void jpLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpLogoutMouseClicked
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jpLogoutMouseClicked
+
+    private void lableResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableResetMouseClicked
+        List<user> u = UserDAO.layDanhSachUser();
+
+        for (user x : u) {
+            if (x.getType() == 1) {
+                x.setPassword("123456");
+            }
+        }
+
+        for (user x : u) {
+            if (x.getType() == 1) {
+                if (UserDAO.capNhatThongTinUser(x) == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu giáo vụ thất bại!");
+                    return;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu giáo vụ thành công!");
+
+    }//GEN-LAST:event_lableResetMouseClicked
+
+    private void cbTab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTab3ActionPerformed
+        tfNameTab3.setText("");
+        tfEmailTab3.setText("");
+        tfPhoneNumberTab3.setText("");
+        tfAddressTab3.setText("");
+        tfUsernameTab3.setText("");
+        jpPassTab3.setText("");
+        jpPassTab3_1.setText("");
+        if (cbTab3.getSelectedIndex() == 0) {
+            tfNameTab3.setEnabled(true);
+            tfEmailTab3.setEnabled(true);
+            tfPhoneNumberTab3.setEnabled(true);
+            tfAddressTab3.setEnabled(true);
+            tfUsernameTab3.setEnabled(true);
+            jpPassTab3.setEnabled(true);
+            jpPassTab3_1.setEnabled(true);
+        } else {
+            tfNameTab3.setEnabled(true);
+            tfEmailTab3.setEnabled(false);
+            tfPhoneNumberTab3.setEnabled(false);
+            tfAddressTab3.setEnabled(true);
+            tfUsernameTab3.setEnabled(true);
+            jpPassTab3.setEnabled(false);
+            jpPassTab3_1.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbTab3ActionPerformed
+
+    private void lableReset1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableReset1MouseClicked
+        List<user> u = UserDAO.layDanhSachUser();
+
+        for (user x : u) {
+            if (x.getType() == 0) {
+                x.setPassword("123456");
+            }
+        }
+
+        for (user x : u) {
+            if (x.getType() == 1) {
+                if (UserDAO.capNhatThongTinUser(x) == false) {
+                    JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu sinh viên thất bại!");
+                    return;
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu sinh viên thành công!");
+    }//GEN-LAST:event_lableReset1MouseClicked
+
+    public void showComboboxTab4() {
+        cbTab4.removeAllItems();
+        List<user> list = UserDAO.layDanhSachUser();
+        for (user c : list) {
+            if (c.getType() == 1) {
+                cbTab4.addItem(c.getUsername());
+            }
+        }
+    }
 
     public void showComboboxTab6() {
         cbTab6.removeAllItems();
@@ -1080,9 +1355,10 @@ public class QLTaiKhoan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeleteTab6;
     private javax.swing.JButton btnFindTab2;
-    private javax.swing.JButton btnPassTab4;
     private javax.swing.JButton btnThemTab3;
     private javax.swing.JButton btnUpdateTab4;
+    private javax.swing.JComboBox<String> cbTab3;
+    private javax.swing.JComboBox<String> cbTab4;
     private javax.swing.JComboBox<String> cbTab6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1091,6 +1367,7 @@ public class QLTaiKhoan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1098,24 +1375,34 @@ public class QLTaiKhoan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JPanel jp3;
     private javax.swing.JPanel jp4;
-    private javax.swing.JPanel jp5;
     private javax.swing.JPanel jp6;
+    private javax.swing.JLabel jpLogout;
     private javax.swing.JPasswordField jpPassTab3;
     private javax.swing.JPasswordField jpPassTab3_1;
     private javax.swing.JLabel lableAddressTab3;
     private javax.swing.JLabel lableAddressTab4;
     private javax.swing.JLabel lableEmailTab3;
     private javax.swing.JLabel lableEmailTab4;
+    private javax.swing.JLabel lableExitTab1;
+    private javax.swing.JLabel lableExitTab2;
+    private javax.swing.JLabel lableExitTab3;
+    private javax.swing.JLabel lableExitTab4;
+    private javax.swing.JLabel lableExitTab6;
     private javax.swing.JLabel lableNameTab3;
     private javax.swing.JLabel lableNameTab4;
     private javax.swing.JLabel lablePasswordTab3;
     private javax.swing.JLabel lablePasswordTab3_1;
     private javax.swing.JLabel lablePhoneNumberTab3;
     private javax.swing.JLabel lablePhoneNumberTab4;
+    private javax.swing.JLabel lableReset;
+    private javax.swing.JLabel lableReset1;
     private javax.swing.JLabel lableTab1;
     private javax.swing.JLabel lableTab2;
     private javax.swing.JLabel lableTab3;
@@ -1123,11 +1410,11 @@ public class QLTaiKhoan extends javax.swing.JFrame {
     private javax.swing.JLabel lableTab6;
     private javax.swing.JLabel lableUsernameTab3;
     private javax.swing.JLabel lableUsernameTab6;
+    private javax.swing.JLabel lableUsernameTab7;
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;
     private javax.swing.JPanel tab3;
     private javax.swing.JPanel tab4;
-    private javax.swing.JPanel tab5;
     private javax.swing.JPanel tab6;
     private javax.swing.JPanel tab7;
     private javax.swing.JTable tableTab1;

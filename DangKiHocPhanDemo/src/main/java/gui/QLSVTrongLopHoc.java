@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pojo.student;
 import pojo.subject;
-import pojo.Class;
+import pojo.ClassPojo;
 import pojo.user;
 
 /**
@@ -48,8 +48,8 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
         jp5.setVisible(false);
     }
 
-    public boolean checkMaLop(String a, List<pojo.Class> cl) {
-        for (pojo.Class c : cl) {
+    public boolean checkMaLop(String a, List<pojo.ClassPojo> cl) {
+        for (pojo.ClassPojo c : cl) {
             if (c.getMaLop().equals(a)) {
                 return true;
             }
@@ -69,7 +69,7 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
             }
         } else {
             for (student t : listStudent) {
-                List<pojo.Class> myList = new ArrayList<>(t.getClass_student());
+                List<pojo.ClassPojo> myList = new ArrayList<>(t.getClass_student());
                 if (checkMaLop(comboboxTab1.getItemAt(index), myList) == true) {
                     modelTab1.addRow(new Object[]{
                         t.getId(), t.getName(), t.getGioiTinh() == 1 ? "Nam" : "Nữ", t.getAddress()
@@ -80,9 +80,9 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
     }
 
     public void showComboboxTab1() {
-        List<Class> listClass = ClassDAO.layDanhSachClass();
+        List<ClassPojo> listClass = ClassDAO.layDanhSachClass();
         comboboxTab1.addItem("Tất cả");
-        for (pojo.Class c : listClass) {
+        for (pojo.ClassPojo c : listClass) {
             comboboxTab1.addItem(c.getMaLop());
         }
     }
@@ -1040,7 +1040,7 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
             s.setName(name);
             s.setAddress(address);
             s.setGioiTinh(gioiTinh);
-            s.getClass_student().add(new Class(lopHoc));
+            s.getClass_student().add(new ClassPojo(lopHoc));
             if (StudentDAO.themSinhVien(s) == true) {
                 JOptionPane.showMessageDialog(rootPane, "Thêm sinh viên vào lớp học thành công!");
             } else {
@@ -1069,8 +1069,8 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
             s.setName(name);
             s.setAddress(address);
             s.setGioiTinh(gioiTinh);
-            Set<Class> set = new HashSet<>();
-            set.add(new Class(lopHoc));
+            Set<ClassPojo> set = new HashSet<>();
+            set.add(new ClassPojo(lopHoc));
             s.setClass_student(set);
             if (StudentDAO.capNhatThongTinStudent(s) == true) {
                 JOptionPane.showMessageDialog(rootPane, "Cập nhật sinh viên vào lớp học thành công!");
@@ -1180,15 +1180,15 @@ public class QLSVTrongLopHoc extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void showComboboxTab3() {
-        List<Class> listClass = ClassDAO.layDanhSachClass();
-        for (Class c : listClass) {
+        List<ClassPojo> listClass = ClassDAO.layDanhSachClass();
+        for (ClassPojo c : listClass) {
             cbClassTab3.addItem(c.getMaLop());
         }
     }
 
     private void showComboboxTab4() {
-        List<Class> listClass = ClassDAO.layDanhSachClass();
-        for (Class c : listClass) {
+        List<ClassPojo> listClass = ClassDAO.layDanhSachClass();
+        for (ClassPojo c : listClass) {
             cbClassTab4.addItem(c.getMaLop());
         }
     }

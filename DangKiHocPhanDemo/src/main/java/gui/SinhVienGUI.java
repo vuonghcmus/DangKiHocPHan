@@ -7,6 +7,7 @@ package gui;
 
 import dao.CourseDAO;
 import dao.StudentDAO;
+import dao.semesterDAO;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pojo.course;
+import pojo.semester;
 import pojo.student;
 import pojo.user;
 
@@ -41,6 +43,9 @@ public class SinhVienGUI extends javax.swing.JFrame {
         jp2.setVisible(false);
         jp3.setVisible(false);
         jp0.setVisible(false);
+        
+        semester s = semesterDAO.layThongTinSemesterHocKiHT();
+        lable.setText(s.getName() + " - " + s.getYear());
     }
 
     public void showTableTab1() {
@@ -110,16 +115,20 @@ public class SinhVienGUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tab0 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        lable = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jp1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableTab1 = new javax.swing.JTable();
         btnTab1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        lableExit1 = new javax.swing.JLabel();
         jp2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableTab2 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
+        lableExit2 = new javax.swing.JLabel();
         jp0 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -130,25 +139,28 @@ public class SinhVienGUI extends javax.swing.JFrame {
         btnUpdateTab0 = new javax.swing.JButton();
         btnChangePassTab0 = new javax.swing.JButton();
         cbTab0 = new javax.swing.JComboBox<>();
+        lableExit4 = new javax.swing.JLabel();
         jp3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableTab3 = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         btnTab3 = new javax.swing.JButton();
+        lableExit3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Giao diện sinh viên");
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(159, 226, 191));
 
-        tab2.setBackground(new java.awt.Color(102, 255, 204));
+        tab2.setBackground(new java.awt.Color(253, 254, 254));
         tab2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab2MouseClicked(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Danh sách đăng kí");
 
         javax.swing.GroupLayout tab2Layout = new javax.swing.GroupLayout(tab2);
@@ -156,7 +168,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
         tab2Layout.setHorizontalGroup(
             tab2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -165,14 +177,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
-        tab4.setBackground(new java.awt.Color(102, 255, 204));
+        tab4.setBackground(new java.awt.Color(253, 254, 254));
         tab4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab4MouseClicked(evt);
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Đăng xuất");
 
         javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
@@ -180,7 +192,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
         tab4Layout.setHorizontalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -189,14 +201,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
-        tab1.setBackground(new java.awt.Color(102, 255, 204));
+        tab1.setBackground(new java.awt.Color(253, 254, 254));
         tab1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab1MouseClicked(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Đăng kí học phần");
 
         javax.swing.GroupLayout tab1Layout = new javax.swing.GroupLayout(tab1);
@@ -213,14 +225,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
-        tab3.setBackground(new java.awt.Color(102, 255, 204));
+        tab3.setBackground(new java.awt.Color(253, 254, 254));
         tab3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab3MouseClicked(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Xóa học phần");
 
         javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
@@ -228,7 +240,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
         tab3Layout.setHorizontalGroup(
             tab3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -237,14 +249,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
-        tab0.setBackground(new java.awt.Color(102, 255, 204));
+        tab0.setBackground(new java.awt.Color(253, 254, 254));
         tab0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tab0MouseClicked(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Cập nhật thông tin");
 
         javax.swing.GroupLayout tab0Layout = new javax.swing.GroupLayout(tab0);
@@ -261,6 +273,10 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
         );
 
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_student_male_80px.png"))); // NOI18N
+
+        lable.setFont(new java.awt.Font("Segoe UI", 2, 22)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -270,11 +286,24 @@ public class SinhVienGUI extends javax.swing.JFrame {
             .addComponent(tab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tab0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jLabel13))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(224, 224, 224)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lable, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addComponent(tab0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -287,9 +316,9 @@ public class SinhVienGUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jp1.setBackground(new java.awt.Color(255, 204, 255));
+        jp1.setBackground(new java.awt.Color(242, 243, 244));
 
-        tableTab1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tableTab1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableTab1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -315,7 +344,8 @@ public class SinhVienGUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableTab1);
 
-        btnTab1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnTab1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnTab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_registration_28px.png"))); // NOI18N
         btnTab1.setText("Đăng kí");
         btnTab1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,9 +353,17 @@ public class SinhVienGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Đăng kí học phần");
+
+        lableExit1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExit1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp1Layout = new javax.swing.GroupLayout(jp1);
         jp1.setLayout(jp1Layout);
@@ -340,7 +378,8 @@ public class SinhVienGUI extends javax.swing.JFrame {
                 .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(377, 377, 377))
+                        .addGap(342, 342, 342)
+                        .addComponent(lableExit1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
                         .addComponent(btnTab1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(404, 404, 404))))
@@ -348,8 +387,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
         jp1Layout.setVerticalGroup(
             jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jp1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lableExit1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -357,8 +399,9 @@ public class SinhVienGUI extends javax.swing.JFrame {
                 .addContainerGap(113, Short.MAX_VALUE))
         );
 
-        jp2.setBackground(new java.awt.Color(255, 204, 255));
+        jp2.setBackground(new java.awt.Color(242, 243, 244));
 
+        tableTab2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tableTab2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -377,9 +420,17 @@ public class SinhVienGUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tableTab2);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Danh sách các môn đã đăng kí");
+
+        lableExit2.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExit2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExit2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExit2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp2Layout = new javax.swing.GroupLayout(jp2);
         jp2.setLayout(jp2Layout);
@@ -393,41 +444,44 @@ public class SinhVienGUI extends javax.swing.JFrame {
                         .addGap(44, 44, 44))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(300, 300, 300))))
+                        .addGap(300, 300, 300))
+                    .addComponent(lableExit2, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         jp2Layout.setVerticalGroup(
             jp2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp2Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(lableExit2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107))
         );
 
-        jp0.setBackground(new java.awt.Color(255, 204, 255));
+        jp0.setBackground(new java.awt.Color(242, 243, 244));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Cập nhật thông tin");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Tên mới");
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Giới tính mới");
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setText("Địa chỉ mới");
 
-        tfNameTab0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tfNameTab0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfNameTab0.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        tfAddressTab0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tfAddressTab0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfAddressTab0.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        btnUpdateTab0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnUpdateTab0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnUpdateTab0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_update_user_25px_2.png"))); // NOI18N
         btnUpdateTab0.setText("Cập nhật");
         btnUpdateTab0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -435,7 +489,8 @@ public class SinhVienGUI extends javax.swing.JFrame {
             }
         });
 
-        btnChangePassTab0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnChangePassTab0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnChangePassTab0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_password_32px.png"))); // NOI18N
         btnChangePassTab0.setText("Đổi mật khẩu");
         btnChangePassTab0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -443,23 +498,21 @@ public class SinhVienGUI extends javax.swing.JFrame {
             }
         });
 
-        cbTab0.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbTab0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbTab0.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nữ", "Nam" }));
+
+        lableExit4.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExit4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExit4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExit4MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp0Layout = new javax.swing.GroupLayout(jp0);
         jp0.setLayout(jp0Layout);
         jp0Layout.setHorizontalGroup(
             jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp0Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(383, 383, 383))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp0Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnUpdateTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(197, 197, 197)
-                .addComponent(btnChangePassTab0)
-                .addGap(250, 250, 250))
             .addGroup(jp0Layout.createSequentialGroup()
                 .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp0Layout.createSequentialGroup()
@@ -473,18 +526,31 @@ public class SinhVienGUI extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp0Layout.createSequentialGroup()
-                        .addComponent(tfAddressTab0)
-                        .addGap(244, 244, 244))
-                    .addGroup(jp0Layout.createSequentialGroup()
                         .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfNameTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cbTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(244, Short.MAX_VALUE))))
+                        .addContainerGap(244, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp0Layout.createSequentialGroup()
+                        .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jp0Layout.createSequentialGroup()
+                                .addComponent(btnUpdateTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnChangePassTab0))
+                            .addComponent(tfAddressTab0))
+                        .addGap(244, 244, 244))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp0Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp0Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(383, 383, 383))
+                    .addComponent(lableExit4, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         jp0Layout.setVerticalGroup(
             jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp0Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addComponent(lableExit4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -498,15 +564,16 @@ public class SinhVienGUI extends javax.swing.JFrame {
                 .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(tfAddressTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addGroup(jp0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUpdateTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnChangePassTab0, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(144, 144, 144))
         );
 
-        jp3.setBackground(new java.awt.Color(255, 204, 255));
+        jp3.setBackground(new java.awt.Color(242, 243, 244));
 
+        tableTab3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tableTab3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -532,7 +599,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tableTab3);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Xóa học phần");
 
@@ -541,6 +608,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
         btnTab3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTab3ActionPerformed(evt);
+            }
+        });
+
+        lableExit3.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        lableExit3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N
+        lableExit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lableExit3MouseClicked(evt);
             }
         });
 
@@ -559,12 +634,14 @@ public class SinhVienGUI extends javax.swing.JFrame {
                         .addGap(445, 445, 445))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp3Layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(382, 382, 382))))
+                        .addGap(382, 382, 382))
+                    .addComponent(lableExit3, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         jp3Layout.setVerticalGroup(
             jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp3Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(lableExit3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -615,11 +692,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab1MouseClicked
-        tab1.setBackground(new Color(255, 255, 255));
-        tab2.setBackground(new Color(102, 255, 204));
-        tab3.setBackground(new Color(102, 255, 204));
-        tab4.setBackground(new Color(102, 255, 204));
-        tab0.setBackground(new Color(102, 255, 204));
+        tab1.setBackground(new Color(204, 204, 255));
+        tab2.setBackground(new Color(253,254,254));
+        tab3.setBackground(new Color(253,254,254));
+        tab4.setBackground(new Color(253,254,254));
+        tab0.setBackground(new Color(253,254,254));
 
         jp1.setVisible(true);
         jp2.setVisible(false);
@@ -630,11 +707,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_tab1MouseClicked
 
     private void tab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab2MouseClicked
-        tab2.setBackground(new Color(255, 255, 255));
-        tab1.setBackground(new Color(102, 255, 204));
-        tab3.setBackground(new Color(102, 255, 204));
-        tab4.setBackground(new Color(102, 255, 204));
-        tab0.setBackground(new Color(102, 255, 204));
+        tab2.setBackground(new Color(204, 204, 255));
+        tab1.setBackground(new Color(253,254,254));
+        tab3.setBackground(new Color(253,254,254));
+        tab4.setBackground(new Color(253,254,254));
+        tab0.setBackground(new Color(253,254,254));
 
         jp2.setVisible(true);
         jp1.setVisible(false);
@@ -644,11 +721,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_tab2MouseClicked
 
     private void tab3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab3MouseClicked
-        tab3.setBackground(new Color(255, 255, 255));
-        tab2.setBackground(new Color(102, 255, 204));
-        tab1.setBackground(new Color(102, 255, 204));
-        tab4.setBackground(new Color(102, 255, 204));
-        tab0.setBackground(new Color(102, 255, 204));
+        tab3.setBackground(new Color(204, 204, 255));
+        tab2.setBackground(new Color(253,254,254));
+        tab1.setBackground(new Color(253,254,254));
+        tab4.setBackground(new Color(253,254,254));
+        tab0.setBackground(new Color(253,254,254));
 
         jp3.setVisible(true);
         jp2.setVisible(false);
@@ -745,11 +822,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTab3ActionPerformed
 
     private void tab0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab0MouseClicked
-        tab0.setBackground(new Color(255, 255, 255));
-        tab2.setBackground(new Color(102, 255, 204));
-        tab3.setBackground(new Color(102, 255, 204));
-        tab4.setBackground(new Color(102, 255, 204));
-        tab1.setBackground(new Color(102, 255, 204));
+        tab0.setBackground(new Color(204, 204, 255));
+        tab2.setBackground(new Color(253,254,254));
+        tab3.setBackground(new Color(253,254,254));
+        tab4.setBackground(new Color(253,254,254));
+        tab1.setBackground(new Color(253,254,254));
 
         jp0.setVisible(true);
         jp2.setVisible(false);
@@ -784,6 +861,22 @@ public class SinhVienGUI extends javax.swing.JFrame {
     private void btnChangePassTab0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePassTab0ActionPerformed
         new changePass().setVisible(true);
     }//GEN-LAST:event_btnChangePassTab0ActionPerformed
+
+    private void lableExit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExit1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExit1MouseClicked
+
+    private void lableExit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExit2MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExit2MouseClicked
+
+    private void lableExit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExit3MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExit3MouseClicked
+
+    private void lableExit4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExit4MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lableExit4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -831,6 +924,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -848,6 +942,11 @@ public class SinhVienGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jp1;
     private javax.swing.JPanel jp2;
     private javax.swing.JPanel jp3;
+    private javax.swing.JLabel lable;
+    private javax.swing.JLabel lableExit1;
+    private javax.swing.JLabel lableExit2;
+    private javax.swing.JLabel lableExit3;
+    private javax.swing.JLabel lableExit4;
     private javax.swing.JPanel tab0;
     private javax.swing.JPanel tab1;
     private javax.swing.JPanel tab2;

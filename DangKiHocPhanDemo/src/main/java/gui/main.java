@@ -24,7 +24,7 @@ import pojo.semester;
 import pojo.student;
 import pojo.teacher;
 import pojo.user;
-import pojo.Class;
+import pojo.ClassPojo;
 import pojo.dangKiHocPhan;
 import pojo.subject;
 import pojo.course;
@@ -37,32 +37,31 @@ public class main {
 
     public static void main(String[] args) {
 
-
-
-
-
+//        if (ClassDAO.xoaClass("19CTT4") == true){
+//            System.out.println("Xoa thanh cong");
+//        }else{
+//            System.out.println("Xoa that bai!");
+//        }
 //        student sv = StudentDAO.layThongTinSinhVien("19120728");
-//        Class a = new Class();
+//        ClassPojo a = new ClassPojo();
 //        a.setMaLop("19CTT4");
-//        Class b = new Class();
+//        ClassPojo b = new ClassPojo();
 //        b.setMaLop("19CTT2");
-//        Class c = new Class();
+//        ClassPojo c = new ClassPojo();
 //        c.setMaLop("19CTT3");
-//        Class d = new Class();
+//        ClassPojo d = new ClassPojo();
 //        d.setMaLop("19CTT1");
-//        Class e = new Class();
+//        ClassPojo e = new ClassPojo();
 //        e.setMaLop("19CM1");
-//        Class f = new Class();
+//        ClassPojo f = new ClassPojo();
 //        f.setMaLop("19CTT5");
-//        Class g = new Class();
+//        ClassPojo g = new ClassPojo();
 //        g.setMaLop("20CTT4");
-//        Class h = new Class();
+//        ClassPojo h = new ClassPojo();
 //        h.setMaLop("19HO1");
-//        Class k = new Class();
+//        ClassPojo k = new ClassPojo();
 //        k.setMaLop("19SH1");
 //
-
-
 //        sv.getClass_student().add(a);
 //        sv.getClass_student().add(d);
 //
@@ -94,7 +93,7 @@ public class main {
 //        System.out.println(sb3.getName() + " - " + sb3.getMaMonHoc() + " - " + sb3.getSoTinChi());
 //        List<Class> listClass = ClassDAO.layDanhSachClass();
 //        
-//        for (Class c : listClass) {
+//        for (ClassPojo c : listClass) {
 //            System.out.println(c.getMaLop());
 //        }
 //        List<subject> listSubject = SubjectDAO.layDanhSachSubject();
@@ -126,7 +125,7 @@ public class main {
 
         student st = StudentDAO.layThongTinSinhVien("19120716");
         course c = CourseDAO.layThongTinCourseTheoTen("Thể dục 2");
-        Class cl = ClassDAO.layThongTinClass("19CTT2");
+        ClassPojo cl = ClassDAO.layThongTinClass("19CTT2");
         if (c == null)
             System.out.println("Null roi");
         subject s = SubjectDAO.layThongTinSubjectTheoTen("Cơ sở dữ liệu");

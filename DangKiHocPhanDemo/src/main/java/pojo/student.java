@@ -41,11 +41,11 @@ public class student implements Serializable, Comparable {
         this.name = name;
     }
 
-    public Set<Class> getClass_student() {
+    public Set<ClassPojo> getClass_student() {
         return class_student;
     }
 
-    public void setClass_student(Set<Class> class_student) {
+    public void setClass_student(Set<ClassPojo> class_student) {
         this.class_student = class_student;
     }
 
@@ -99,7 +99,7 @@ public class student implements Serializable, Comparable {
     @Fetch(FetchMode.JOIN)
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "student_class", joinColumns = @JoinColumn(name = "id_student", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "malop_class", referencedColumnName = "maLop"))
-    private Set<Class> class_student = new HashSet<>();    
+    private Set<ClassPojo> class_student = new HashSet<>();    
     
     @Fetch(FetchMode.JOIN)
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
