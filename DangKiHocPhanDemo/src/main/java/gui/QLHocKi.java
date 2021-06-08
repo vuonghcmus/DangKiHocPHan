@@ -5,12 +5,14 @@
  */
 package gui;
 
+import dao.DangKiHocPhanDAO;
 import dao.semesterDAO;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import pojo.dangKiHocPhan;
 import pojo.semester;
 
 /**
@@ -63,19 +65,19 @@ public class QLHocKi extends javax.swing.JFrame {
         cbYearTab3.removeAllItems();
         List<semester> listSemester = semesterDAO.layDanhSachSemester();
         List<String> list = new ArrayList<>();
-        for (semester s : listSemester){
+        for (semester s : listSemester) {
             list.add(s.getYear());
         }
-        
-        for (int i = 0; i < list.size() - 1; i ++){
-            for (int j = i + 1; j < list.size(); j++){
-                if (list.get(i).equals(list.get(j))){
+
+        for (int i = 0; i < list.size() - 1; i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).equals(list.get(j))) {
                     list.remove(j);
                     j--;
                 }
             }
         }
-        
+
         for (String s : list) {
             cbYearTab3.addItem(s);
         }
@@ -953,6 +955,12 @@ public class QLHocKi extends javax.swing.JFrame {
                 String name = (String) modelTab4.getValueAt(i, 1);
                 String year = (String) modelTab4.getValueAt(i, 2);
                 semester s = semesterDAO.layHocKyVaNamCuaSemester(name, year);
+                List<dangKiHocPhan> dk = DangKiHocPhanDAO.layThongTinDKHPTheoTen(name + " - " + year);
+                if (dk != null) {
+                    System.out.println("Vuong");
+                    dk.get(0).setHkHienTai(1);
+                    DangKiHocPhanDAO.capNhatThongTinDangKiHP(dk.get(0));
+                }
                 s.setHocKyHienTai(1);
                 if (semesterDAO.capNhatThongTinSemester(s) == true) {
                     JOptionPane.showMessageDialog(rootPane, "Set học kỳ thành công!");
@@ -963,8 +971,19 @@ public class QLHocKi extends javax.swing.JFrame {
                 String name = (String) modelTab4.getValueAt(i, 1);
                 String year = (String) modelTab4.getValueAt(i, 2);
                 semester s = semesterDAO.layHocKyVaNamCuaSemester(name, year);
+                List<dangKiHocPhan> dk = DangKiHocPhanDAO.layThongTinDKHPTheoTen(name + " - " + year);
+                if (dk != null) {
+                    for (dangKiHocPhan x : dk) {
+                        x.setHkHienTai(0);
+                    }
+                }
                 s.setHocKyHienTai(0);
                 if (semesterDAO.capNhatThongTinSemester(s) == true) {
+                    if (dk != null) {
+                        for (dangKiHocPhan x : dk) {
+                            DangKiHocPhanDAO.capNhatThongTinDangKiHP(x);
+                        }
+                    }
                     System.out.println("Set học kỳ hiện tại thành học kỳ không hiện tại!");
                 }
             }
@@ -1030,12 +1049,12 @@ public class QLHocKi extends javax.swing.JFrame {
     }//GEN-LAST:event_cb5Tab2ActionPerformed
 
     private void cbYearTab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbYearTab3ActionPerformed
-        if (cbYearTab3.getSelectedItem() == null){
+        if (cbYearTab3.getSelectedItem() == null) {
             //System.out.println("Rong roi!");
             return;
         }
         String year = cbYearTab3.getSelectedItem().toString();
-        
+
         List<semester> list = semesterDAO.layDanhSachSemester();
         cbNameTab3.removeAllItems();
         for (semester s : list) {

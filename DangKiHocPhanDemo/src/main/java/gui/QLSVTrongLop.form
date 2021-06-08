@@ -791,7 +791,7 @@
                                       <Component id="tfAddressTab3" alignment="0" min="-2" pref="335" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="cbClassTab3" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cbTab3" alignment="0" max="32767" attributes="0"/>
                                       <Component id="cbGioiTinhTab3" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -834,7 +834,7 @@
                                   <Component id="cbGioiTinhTab3" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="cbClassTab3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="cbTab3" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lableClassTab3" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -949,7 +949,7 @@
                 <Property name="text" type="java.lang.String" value="Th&#xea;m sinh vi&#xea;n v&#xe0;o l&#x1edb;p h&#x1ecd;c"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbClassTab3">
+            <Component class="javax.swing.JComboBox" name="cbTab3">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -1017,7 +1017,7 @@
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="tfNameTab4" alignment="1" max="32767" attributes="0"/>
                                   <Component id="tfAddressTab4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="cbClassTab4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="cbTab4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="cbGioiTinhTab4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="tfIDTab4" alignment="1" min="-2" pref="365" max="-2" attributes="0"/>
                               </Group>
@@ -1060,7 +1060,7 @@
                                   <Component id="cbGioiTinhTab4" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="cbClassTab4" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="cbTab4" min="-2" pref="32" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lableClassTab4" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -1102,7 +1102,7 @@
                 <Property name="text" type="java.lang.String" value="C&#x1ead;p nh&#x1ead;t th&#xf4;ng tin sinh vi&#xea;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cbClassTab4">
+            <Component class="javax.swing.JComboBox" name="cbTab4">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>

@@ -967,6 +967,8 @@ public class QLMonHoc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateTab4ActionPerformed
 
     private void btnTab5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTab5ActionPerformed
+        if (cbTab5.getSelectedItem() == null)
+            return;
         String maMonHoc = cbTab5.getSelectedItem().toString();
 
         if (SubjectDAO.xoaSubject(maMonHoc) == true) {
@@ -977,6 +979,9 @@ public class QLMonHoc extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTab5ActionPerformed
 
     private void cbTab5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTab5ActionPerformed
+        if (cbTab5.getSelectedItem() == null)
+            return;
+        
         subject s = SubjectDAO.layThongTinSubject(cbTab5.getSelectedItem().toString());
         tfTab5.setText(s.getName());
     }//GEN-LAST:event_cbTab5ActionPerformed

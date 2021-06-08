@@ -25,7 +25,6 @@ gui\QLDKHocPhan.class
 gui\QLHocKi$3.class
 gui\QLSVTrongLop$7.class
 gui\QLHocKi$4.class
-dao\AccountDAO.class
 gui\QLHocKi$11.class
 gui\QLMonHoc$16.class
 gui\SinhVienGUI$4.class
@@ -58,6 +57,7 @@ gui\QLSVTrongLop$10.class
 pojo\course.class
 gui\QLSVTrongLop$5.class
 gui\QLHocKi$12.class
+gui\SinhVienGUI$18.class
 dao\UserDAO.class
 gui\QLTaiKhoan$9.class
 gui\QLLopHoc$8.class
@@ -83,7 +83,6 @@ gui\QLHocPhan$4.class
 gui\QLSinhVien$2.class
 gui\QLTaiKhoan$8.class
 gui\QLHocPhan.class
-gui\loginDemo$2.class
 gui\GiaoVuGUI$10.class
 gui\SinhVienGUI$16.class
 gui\QLSVTrongLopHoc$11.class
@@ -97,7 +96,6 @@ gui\QLHocKi$7.class
 gui\QLSVTrongLop$3.class
 gui\QLHocKi$14.class
 gui\QLSVTrongLop$12.class
-gui\loginDemo$1.class
 gui\QLSVTrongLop$11.class
 gui\QLTaiKhoan$10.class
 gui\QLTaiKhoan$7.class
@@ -119,7 +117,6 @@ gui\QLHocKi$6.class
 gui\QLSVTrongLop$9.class
 gui\GiaoVuGUI$6.class
 gui\QLHocKi$19.class
-gui\loginDemo.class
 gui\QLTaiKhoan$14.class
 gui\QLDKHocPhan$10.class
 gui\QLHocPhan$10.class
@@ -131,6 +128,7 @@ gui\QLTaiKhoan$2.class
 pojo\student.class
 gui\login$1.class
 gui\QLLopHoc$9.class
+gui\SinhVienGUI$19.class
 gui\QLHocKi$13.class
 gui\QLMonHoc$3.class
 gui\QLMonHoc$19.class
@@ -203,7 +201,6 @@ gui\QLSVTrongLop$16.class
 gui\QLSVTrongLopHoc$2.class
 gui\QLTaiKhoan$1.class
 gui\QLTaiKhoan$16.class
-pojo\account.class
 dao\StudentDAO.class
 gui\QLHocKi$1.class
 gui\updateInfor$1.class

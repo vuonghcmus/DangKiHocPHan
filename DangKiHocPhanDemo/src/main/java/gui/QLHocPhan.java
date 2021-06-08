@@ -50,6 +50,7 @@ public class QLHocPhan extends javax.swing.JFrame {
     }
 
     public void showComboboxNameTab3() {
+        cbNameTab3.removeAllItems();
         List<subject> list = SubjectDAO.layDanhSachSubject();
         for (subject s : list) {
             cbNameTab3.addItem(s.getName());
@@ -234,7 +235,7 @@ public class QLHocPhan extends javax.swing.JFrame {
             .addGroup(tab4Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab4Layout.setVerticalGroup(
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,8 +258,8 @@ public class QLHocPhan extends javax.swing.JFrame {
         tab5Layout.setHorizontalGroup(
             tab5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
         tab5Layout.setVerticalGroup(
@@ -293,21 +294,21 @@ public class QLHocPhan extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel20))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jpLogout))))
+                            .addComponent(jpLogout)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jLabel20)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel20)
                 .addGap(62, 62, 62)
+                .addComponent(jLabel20)
+                .addGap(63, 63, 63)
                 .addComponent(tab1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(tab2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -321,7 +322,7 @@ public class QLHocPhan extends javax.swing.JFrame {
                 .addComponent(jpLogout)
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         jp4.setBackground(new java.awt.Color(242, 243, 244));
@@ -767,7 +768,7 @@ public class QLHocPhan extends javax.swing.JFrame {
         jp1.setVisible(false);
         jp3.setVisible(false);
         jp4.setVisible(false);
-        
+
         showComboboxNameTab2();
     }//GEN-LAST:event_tab2MouseClicked
 
@@ -811,12 +812,19 @@ public class QLHocPhan extends javax.swing.JFrame {
     }//GEN-LAST:event_cbNgayHocTab3ActionPerformed
 
     private void cbNameTab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbNameTab3ActionPerformed
+        if (cbNameTab3.getSelectedItem() == null)
+            return;
+        
         subject s = SubjectDAO.layThongTinSubjectTheoTen(cbNameTab3.getSelectedItem().toString());
         tfMaMonTab3.setText(s.getMaMonHoc());
         tfSoTCTab3.setText(Integer.toString(s.getSoTinChi()));
     }//GEN-LAST:event_cbNameTab3ActionPerformed
 
     private void btnTab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTab3ActionPerformed
+        if (tfMaxSlotTab3.getText().equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Thông tin không được để trống!");
+            return;
+        }
         String maMonHoc = tfMaMonTab3.getText();
         String tenMonHoc = cbNameTab3.getSelectedItem().toString();
         String gvlt = cbGVLTTab3.getSelectedItem().toString();
@@ -844,6 +852,9 @@ public class QLHocPhan extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTab3ActionPerformed
 
     private void cbTab2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTab2ActionPerformed
+        if (cbTab2.getSelectedItem() == null) {
+            return;
+        }
         modelTab2.setNumRows(0);
         course c = CourseDAO.layThongTinCourseTheoTen(cbTab2.getSelectedItem().toString());
         if (c != null) {
@@ -856,6 +867,9 @@ public class QLHocPhan extends javax.swing.JFrame {
 
     private void btnTab4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTab4ActionPerformed
         showComboboxNameTab4();
+        if (cbTab4.getSelectedItem() == null) {
+            return;
+        }
         String name = cbTab4.getSelectedItem().toString();
         course c = CourseDAO.layThongTinCourseTheoTen(name);
         if (c == null) {
@@ -864,6 +878,7 @@ public class QLHocPhan extends javax.swing.JFrame {
         }
         if (CourseDAO.xoaCourse(c.getMaMonHoc()) == true) {
             JOptionPane.showMessageDialog(rootPane, "Xóa học phần thành công!");
+            showComboboxNameTab4();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Xóa học phần thất bại!");
         }

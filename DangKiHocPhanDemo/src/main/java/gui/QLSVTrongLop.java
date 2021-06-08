@@ -27,7 +27,7 @@ import pojo.ClassPojo;
  *
  * @author HP
  */
-public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListener{
+public class QLSVTrongLop extends javax.swing.JFrame{
 
     /**
      * Creates new form QLSVTrongLop
@@ -120,14 +120,14 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         tfNameTab3 = new javax.swing.JTextField();
         tfAddressTab3 = new javax.swing.JTextField();
         lableTab3 = new javax.swing.JLabel();
-        cbClassTab3 = new javax.swing.JComboBox<>();
+        cbTab3 = new javax.swing.JComboBox<>();
         lableIDTab3 = new javax.swing.JLabel();
         lableNameTab3 = new javax.swing.JLabel();
         jp4 = new javax.swing.JPanel();
         lableExit4 = new javax.swing.JLabel();
         tfAddressTab4 = new javax.swing.JTextField();
         lableTab4 = new javax.swing.JLabel();
-        cbClassTab4 = new javax.swing.JComboBox<>();
+        cbTab4 = new javax.swing.JComboBox<>();
         lableIDTab4 = new javax.swing.JLabel();
         lableAddressTab4 = new javax.swing.JLabel();
         lableNameTab4 = new javax.swing.JLabel();
@@ -607,7 +607,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         lableTab3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab3.setText("Thêm sinh viên vào lớp học");
 
-        cbClassTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cbTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         lableIDTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableIDTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -645,7 +645,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
                                 .addComponent(tfNameTab3)
                                 .addComponent(tfAddressTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cbClassTab3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbTab3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cbGioiTinhTab3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jp3Layout.createSequentialGroup()
                         .addGap(275, 275, 275)
@@ -677,7 +677,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
                             .addComponent(lableGioiTinhTab3)
                             .addComponent(cbGioiTinhTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
-                        .addComponent(cbClassTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lableClassTab3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(btnTab3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -701,7 +701,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         lableTab4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab4.setText("Cập nhật thông tin sinh viên");
 
-        cbClassTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cbTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         lableIDTab4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableIDTab4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -766,7 +766,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
                         .addGroup(jp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(tfNameTab4)
                             .addComponent(tfAddressTab4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbClassTab4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbTab4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cbGioiTinhTab4, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfIDTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jp4Layout.createSequentialGroup()
@@ -799,7 +799,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
                             .addComponent(lableGioiTinhTab4)
                             .addComponent(cbGioiTinhTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
-                        .addComponent(cbClassTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lableClassTab4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(btnTab4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1005,6 +1005,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         tab1.setBackground(new Color(253, 254, 254));
         tab4.setBackground(new Color(253, 254, 254));
         tab5.setBackground(new Color(253, 254, 254));
+        showComboboxTab3();
     }//GEN-LAST:event_tab3MouseClicked
 
     private void tab4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab4MouseClicked
@@ -1019,6 +1020,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         tab3.setBackground(new Color(253, 254, 254));
         tab1.setBackground(new Color(253, 254, 254));
         tab5.setBackground(new Color(253, 254, 254));
+        showComboboxTab4();
     }//GEN-LAST:event_tab4MouseClicked
 
     private void tab5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tab5MouseClicked
@@ -1072,7 +1074,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         }
 
         int gioiTinh = cbGioiTinhTab3.getSelectedIndex();
-        String lopHoc = (String) cbClassTab3.getSelectedItem();
+        String lopHoc = (String) cbTab3.getSelectedItem();
 
         if (StudentDAO.layThongTinSinhVien(id) != null) {
             JOptionPane.showMessageDialog(rootPane, "Mã số sinh viên đã tồn tại!");
@@ -1102,7 +1104,7 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
         }
 
         int gioiTinh = cbGioiTinhTab4.getSelectedIndex();
-        String lopHoc = (String) cbClassTab4.getSelectedItem();
+        String lopHoc = (String) cbTab4.getSelectedItem();
 
         if (StudentDAO.layThongTinSinhVien(id) == null) {
             JOptionPane.showMessageDialog(rootPane, "Mã số sinh viên không tồn tại!");
@@ -1200,10 +1202,10 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
     private javax.swing.JButton btnTab2;
     private javax.swing.JButton btnTab3;
     private javax.swing.JButton btnTab4;
-    private javax.swing.JComboBox<String> cbClassTab3;
-    private javax.swing.JComboBox<String> cbClassTab4;
     private javax.swing.JComboBox<String> cbGioiTinhTab3;
     private javax.swing.JComboBox<String> cbGioiTinhTab4;
+    private javax.swing.JComboBox<String> cbTab3;
+    private javax.swing.JComboBox<String> cbTab4;
     private javax.swing.JComboBox<String> comboboxTab1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -1266,8 +1268,17 @@ public class QLSVTrongLop extends javax.swing.JFrame implements TableModelListen
     private javax.swing.JTextField tfTab2;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void tableChanged(TableModelEvent e) {
-       return;
+    private void showComboboxTab3() {
+        List<pojo.ClassPojo> listClass = ClassDAO.layDanhSachClass();
+        for (pojo.ClassPojo c : listClass) {
+            cbTab3.addItem(c.getMaLop());
+        }
+    }
+
+    private void showComboboxTab4() {
+        List<pojo.ClassPojo> listClass = ClassDAO.layDanhSachClass();
+        for (pojo.ClassPojo c : listClass) {
+            cbTab4.addItem(c.getMaLop());
+        }
     }
 }

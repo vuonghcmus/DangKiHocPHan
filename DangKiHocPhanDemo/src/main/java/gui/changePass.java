@@ -45,24 +45,25 @@ public class changePass extends javax.swing.JFrame {
         setBackground(new java.awt.Color(229, 231, 233));
         setUndecorated(true);
 
-        lable1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lable1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lable1.setForeground(new java.awt.Color(255, 0, 102));
         lable1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lable1.setText("ĐỔI MẬT KHẨU");
 
-        lableOldPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableOldPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableOldPass.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableOldPass.setText("Nhập mật khẩu cũ");
 
-        lableNewPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNewPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNewPass.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNewPass.setText("Nhập mật khẩu mới");
 
-        lableNewPass_1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lableNewPass_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNewPass_1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNewPass_1.setText("Xác nhận mật khẩu");
 
-        btnChange.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnChange.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_save_25px_1.png"))); // NOI18N
         btnChange.setText("Thay đổi");
         btnChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,13 +71,13 @@ public class changePass extends javax.swing.JFrame {
             }
         });
 
-        jpOldPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jpOldPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpOldPass.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        jpNewPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jpNewPass.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpNewPass.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
-        jpNewPass_1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jpNewPass_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jpNewPass_1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
 
         lableExit.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
@@ -104,16 +105,16 @@ public class changePass extends javax.swing.JFrame {
                     .addComponent(jpOldPass))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(278, 278, 278))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 237, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lable1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(236, 236, 236))
                     .addComponent(lableExit, javax.swing.GroupLayout.Alignment.TRAILING)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnChange)
+                .addGap(246, 246, 246))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,8 +134,8 @@ public class changePass extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lableNewPass_1)
                     .addComponent(jpNewPass_1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(btnChange, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -145,12 +146,20 @@ public class changePass extends javax.swing.JFrame {
         String oldPass = jpOldPass.getText();
         String newPass = jpNewPass.getText();
         String newPass_1 = jpNewPass_1.getText();
-        user temp = UserDAO.layThongTinUser(login.staticUsername);
 
+        if (oldPass.equals("") || newPass.equals("") || newPass_1.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Thông tin không được để trống!");
+            return;
+        }
+
+        user temp = UserDAO.layThongTinUser(login.staticUsername);
+        boolean flag = true;
         if (!newPass.equals(newPass_1)) {
             JOptionPane.showMessageDialog(rootPane, "Mật khẩu không khớp");
+            flag = false;
         } else if (!temp.getPassword().equals(oldPass)) {
             JOptionPane.showMessageDialog(rootPane, "Mật khẩu không chính xác");
+            flag = false;
         } else {
             temp.setPassword(newPass_1);
             //user u = new user(login.staticUsername, newPass, 1, null);
@@ -160,11 +169,12 @@ public class changePass extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Đổi mật khẩu thất bại");
             }
         }
-        this.dispose();
+
+        if (flag == true)
+            this.dispose();
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void lableExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lableExitMouseClicked
-        new updateInfor().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lableExitMouseClicked
 

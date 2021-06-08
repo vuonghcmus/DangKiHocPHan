@@ -6,9 +6,7 @@
 package gui;
 
 import dao.UserDAO;
-import static gui.loginDemo.staticUsername;
 import java.awt.Color;
-import java.awt.geom.RoundRectangle2D;
 import java.util.List;
 import javax.swing.JOptionPane;
 import pojo.user;

@@ -1150,7 +1150,8 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             }
             user u = new user(username, "123456", 0, null);
             student st = new student(username, name, 1, null, address);
-            if (StudentDAO.themSinhVien(st) == true && UserDAO.addUser(u) == true) {
+            if ((StudentDAO.themSinhVien(st) == true || StudentDAO.layThongTinSinhVien(username) != null)
+                    && UserDAO.addUser(u) == true) {
                 JOptionPane.showMessageDialog(rootPane, "Thêm tài khoản thành công");
                 tfNameTab3.setText("");
                 tfEmailTab3.setText("");
@@ -1282,7 +1283,7 @@ public class QLTaiKhoan extends javax.swing.JFrame {
         }
 
         for (user x : u) {
-            if (x.getType() == 1) {
+            if (x.getType() == 0) {
                 if (UserDAO.capNhatThongTinUser(x) == false) {
                     JOptionPane.showMessageDialog(rootPane, "Reset mật khẩu sinh viên thất bại!");
                     return;

@@ -68,6 +68,24 @@ public class DangKiHocPhanDAO {
             return list.get(0);
         }
     }
+    
+    public static List<dangKiHocPhan> layThongTinDKHPTheoTen(String name) {
+        List<dangKiHocPhan> list = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "FROM dangkihocphan AS u where u.name = " + "'" + name + "'";
+            Query query = session.createQuery(hql);
+            list = query.list();
+        } catch (HibernateException ex) {
+//Log the exception
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        if (list.size() == 0)
+            return null;
+        return list;
+    }
 
     public static boolean addDangKiHP(dangKiHocPhan t) {
         Session session = HibernateUtil.getSessionFactory().openSession();
