@@ -25,6 +25,7 @@ public class QLDKHocPhan extends javax.swing.JFrame {
      */
     DefaultTableModel modelTab1;
 
+
     public QLDKHocPhan() {
         initComponents();
         setLocationRelativeTo(null);
