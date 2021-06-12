@@ -51,6 +51,7 @@ public class SinhVienGUI extends javax.swing.JFrame {
         jp0.setVisible(false);
         jp7.setVisible(true);
 
+
         semester s = semesterDAO.layThongTinSemesterHocKiHT();
         if (s != null) {
             lable.setText(s.getName() + " - " + s.getYear());
