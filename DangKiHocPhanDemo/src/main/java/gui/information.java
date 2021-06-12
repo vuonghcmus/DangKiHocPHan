@@ -66,29 +66,29 @@ public class information extends javax.swing.JFrame {
         lableEmailTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableEmailTab3.setText("Email");
 
+        tfAddressTab3.setEditable(false);
         tfAddressTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfAddressTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfAddressTab3.setEnabled(false);
 
         lableNameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableNameTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lableNameTab3.setText("Họ và tên");
 
+        tfPhoneNumberTab3.setEditable(false);
         tfPhoneNumberTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfPhoneNumberTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfPhoneNumberTab3.setEnabled(false);
 
+        tfEmailTab3.setEditable(false);
         tfEmailTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfEmailTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfEmailTab3.setEnabled(false);
 
         lableTab3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         lableTab3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lableTab3.setText("THÔNG TIN TÀI KHOẢN");
 
+        tfNameTab3.setEditable(false);
         tfNameTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfNameTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfNameTab3.setEnabled(false);
 
         lableUsernameTab3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lableUsernameTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -102,9 +102,9 @@ public class information extends javax.swing.JFrame {
         lablePhoneNumberTab3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lablePhoneNumberTab3.setText("Số điện thoại");
 
+        tfUsernameTab3.setEditable(false);
         tfUsernameTab3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tfUsernameTab3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfUsernameTab3.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N

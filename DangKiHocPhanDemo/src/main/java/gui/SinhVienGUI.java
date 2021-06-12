@@ -15,6 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import pojo.course;
@@ -50,7 +51,6 @@ public class SinhVienGUI extends javax.swing.JFrame {
         jp3.setVisible(false);
         jp0.setVisible(false);
         jp7.setVisible(true);
-
 
         semester s = semesterDAO.layThongTinSemesterHocKiHT();
         if (s != null) {
@@ -1033,14 +1033,30 @@ public class SinhVienGUI extends javax.swing.JFrame {
         }
 
         for (course c : listCourse) {
-            st.getCourse_student().add(c);
+            if (checkSet(c, st.getCourse_student()) == false) {
+                st.getCourse_student().add(c);
+            }
         }
+        System.out.println(st.getCourse_student().size());
+        for (course c : st.getCourse_student()) {
+            System.out.println(c.getTenMon());
+        }
+
         if (StudentDAO.capNhatThongTinStudent(st) == true) {
             JOptionPane.showMessageDialog(rootPane, "Đăng kí học phần thành công!");
         } else {
             JOptionPane.showMessageDialog(rootPane, "Đăng kí học phần thất bại!");
         }
     }//GEN-LAST:event_btnTab1ActionPerformed
+
+    private static boolean checkSet(course str, Set<course> set) {
+        for (course s : set) {
+            if (s.getMaMonHoc().equals(str.getMaMonHoc()) == true) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     private void btnTab3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTab3ActionPerformed
         if (c != null) {

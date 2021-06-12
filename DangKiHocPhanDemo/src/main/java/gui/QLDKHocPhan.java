@@ -25,7 +25,6 @@ public class QLDKHocPhan extends javax.swing.JFrame {
      */
     DefaultTableModel modelTab1;
 
-
     public QLDKHocPhan() {
         initComponents();
         setLocationRelativeTo(null);
@@ -256,9 +255,9 @@ public class QLDKHocPhan extends javax.swing.JFrame {
             }
         });
 
+        tfTab2.setEditable(false);
         tfTab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tfTab2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tfTab2.setEnabled(false);
 
         cb1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026" }));
@@ -314,9 +313,9 @@ public class QLDKHocPhan extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel10.setText("Ngày bắt đầu học kì hiện tại");
 
+        tf_1Tab2.setEditable(false);
         tf_1Tab2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tf_1Tab2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        tf_1Tab2.setEnabled(false);
 
         lableExit1.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         lableExit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N

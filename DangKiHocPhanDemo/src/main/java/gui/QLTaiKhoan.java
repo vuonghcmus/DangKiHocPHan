@@ -1083,7 +1083,8 @@ public class QLTaiKhoan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập username!");
             return;
         }
-
+           
+        modelTab2.setNumRows(0);
         List<teacher> listTeacher = TeacherDAO.layDanhSachTeacher();
         String username = tfTab2.getText();
         for (teacher t : listTeacher) {

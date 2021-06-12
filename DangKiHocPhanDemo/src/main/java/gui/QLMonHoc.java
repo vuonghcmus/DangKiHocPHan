@@ -571,8 +571,8 @@ public class QLMonHoc extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("Tên môn học");
 
+        tfTab5.setEditable(false);
         tfTab5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tfTab5.setEnabled(false);
 
         lableExitTab5.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         lableExitTab5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_close_window_35px.png"))); // NOI18N

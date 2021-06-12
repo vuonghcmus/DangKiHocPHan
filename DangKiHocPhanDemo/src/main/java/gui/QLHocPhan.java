@@ -59,9 +59,9 @@ public class QLHocPhan extends javax.swing.JFrame {
 
     public void showComboboxNameTab2() {
         cbTab2.removeAllItems();
-        List<subject> list = SubjectDAO.layDanhSachSubject();
-        for (subject s : list) {
-            cbTab2.addItem(s.getName());
+        List<course> list = CourseDAO.layDanhSachCourse();
+        for (course s : list) {
+            cbTab2.addItem(s.getTenMon());
         }
     }
 
@@ -866,7 +866,6 @@ public class QLHocPhan extends javax.swing.JFrame {
     }//GEN-LAST:event_cbTab2ActionPerformed
 
     private void btnTab4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTab4ActionPerformed
-        showComboboxNameTab4();
         if (cbTab4.getSelectedItem() == null) {
             return;
         }
