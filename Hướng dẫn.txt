@@ -1,0 +1,10 @@
+link youtube demo: https://www.youtube.com/watch?v=hHmCuznx2rc&t=534s
+
+% tham khảo: 7%, tham khảo cách tạo giao diện đẹp và cách cài đặt file hibernate.cfg.xml trong netbean.
+link tham khảo:
+https://www.youtube.com/watch?v=1nEluKUOic8
+https://www.youtube.com/watch?v=qNdu5xkcig8
+
+Cấu trúc dữ liệu sử dụng: Set, List
+
+
